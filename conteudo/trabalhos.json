@@ -93,7 +93,7 @@
     ],
     "selo": "Motion Design",
     "ano": "2022",
-    "capa": "https://i.ytimg.com/vi/6N3FVEOtd3o/maxresdefault.jpg",
+    "capa": "assets/img/trabalhos/palasession-capa.webp",
     "papel": "Edição, finalização e motion design (freelancer)",
     "descricao": [
       "Foi muito gratificante participar da Palatrip Sessions, um projeto que valoriza e dá visibilidade aos cantores e MCs de diversas vertentes do Norte de Minas. No motion design, meu objetivo foi criar elementos visuais que complementassem a identidade do projeto e reforçassem a energia das apresentações, contribuindo para uma experiência audiovisual mais dinâmica e envolvente.",
@@ -102,9 +102,179 @@
     "galeria": [
       {
         "youtube": "6N3FVEOtd3o"
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-set-01.webp",
+        "legenda": "Bastidores — montagem do set",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-set-02.webp",
+        "legenda": "Bastidores — câmera em ação",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-cego.webp",
+        "legenda": "Cego no set",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-set-03.webp",
+        "legenda": "Bastidores",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-elenco-01.webp",
+        "legenda": "Elenco",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-elenco-02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-dj-01.webp",
+        "legenda": "DJ Drew no set",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-dj-02.webp",
+        "meia": true
       }
     ],
-    "tamanho": "medio"
+    "tamanho": "medio",
+    "tira": [
+      "assets/img/trabalhos/palasession-capa.webp",
+      {
+        "src": "assets/img/trabalhos/palasession-set-01.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/palasession-dj-01.webp"
+      }
+    ]
+  },
+  {
+    "id": "pesadelo",
+    "titulo": "Casa Cheia",
+    "resumo": "Sound design, mixagem e masterização de curta-metragem",
+    "categorias": [
+      "som",
+      "cinema"
+    ],
+    "selo": "Sound Design",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/casacheia-capa.webp",
+    "papel": "Sound design, mixagem e masterização",
+    "descricao": [
+      "Curta-metragem de ficção de Cadu, com 12 minutos. No filme, assinei o sound design, a mixagem e a masterização."
+    ],
+    "tira": [
+      "assets/img/trabalhos/casacheia-capa.webp"
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/pesadelo-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/pesadelo-02.webp",
+        "meia": true
+      }
+    ],
+    "som": {
+      "titulo": "O som do filme",
+      "papeis": [
+        "Sound design",
+        "Mixagem",
+        "Masterização"
+      ],
+      "texto": "No Casa Cheia, cuidei de todo o som do filme: o sound design, a mixagem e a masterização. Assista com fones.",
+      "ondas": [
+        1.0,
+        0.62,
+        0.4,
+        0.54,
+        0.87,
+        0.55,
+        0.5,
+        0.6,
+        0.52,
+        0.4,
+        0.43,
+        0.2,
+        0.27,
+        0.0,
+        0.01,
+        0.06,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.06,
+        0.01,
+        0.03,
+        0.03,
+        0.03,
+        0.0,
+        0.01,
+        0.01,
+        0.31,
+        0.16,
+        0.14,
+        0.92,
+        0.34,
+        0.39,
+        0.56,
+        0.56,
+        0.02,
+        0.0,
+        0.01,
+        0.02,
+        0.38,
+        0.38,
+        0.12,
+        0.4,
+        0.01,
+        0.01,
+        0.02,
+        0.03,
+        0.08,
+        0.11,
+        0.15,
+        0.39,
+        0.01,
+        0.51,
+        0.03,
+        0.02,
+        0.17,
+        0.03,
+        0.1,
+        0.1,
+        0.13,
+        0.05,
+        0.13,
+        0.13,
+        0.1,
+        0.39,
+        0.35,
+        0.38,
+        0.3,
+        0.41,
+        0.49,
+        0.03,
+        0.01,
+        0.03,
+        0.23,
+        0.58,
+        0.16,
+        0.18,
+        0.29,
+        0.2
+      ],
+      "arquivo": "",
+      "video": "assets/video/casa-cheia.mp4",
+      "poster": "assets/img/trabalhos/pesadelo-04.webp"
+    }
   },
   {
     "id": "filmes-mixados",
@@ -169,11 +339,16 @@
         "meia": true
       }
     ],
-    "tamanho": "medio"
+    "tamanho": "medio",
+    "tira": [
+      "https://i.ytimg.com/vi/MBorpBIU9rs/hq720.jpg",
+      "https://i.ytimg.com/vi/kdKI97c6QB4/hq720.jpg",
+      "https://i.ytimg.com/vi/ux6QHrVzQPA/hq720.jpg"
+    ]
   },
   {
     "id": "aureos",
-    "titulo": "Aureos",
+    "titulo": "Aurus",
     "resumo": "Animação de apresentação para a empresa",
     "categorias": [
       "motion"
@@ -182,9 +357,9 @@
     "ano": "2026",
     "capa": "assets/img/trabalhos/aureos-capa.webp",
     "papel": "Animação e motion design",
-    "cliente": "Aureos",
+    "cliente": "Aurus",
     "descricao": [
-      "Animação feita para divulgação da empresa Aureos."
+      "Animação feita para divulgação da empresa Aurus."
     ],
     "galeria": [
       {
@@ -243,6 +418,49 @@
     "tamanho": ""
   },
   {
+    "id": "mosca-do-ralo",
+    "titulo": "Mosca do Ralo",
+    "resumo": "Curta de animação 3D",
+    "categorias": [
+      "motion"
+    ],
+    "selo": "Animação 3D",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/mosca-03.webp",
+    "video": "assets/video/mosca-do-ralo.mp4",
+    "descricao": [
+      "Curta de animação 3D com lip sync, finalizado em 2026."
+    ],
+    "tira": [
+      "assets/img/trabalhos/mosca-03.webp",
+      "assets/img/trabalhos/mosca-01.webp",
+      "assets/img/trabalhos/mosca-05.webp"
+    ],
+    "galeria": [
+      {
+        "legenda": "Curta completo",
+        "video_controles": "assets/video/mosca-do-ralo.mp4",
+        "poster": "assets/img/trabalhos/mosca-03.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/mosca-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/mosca-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/mosca-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/mosca-05.webp",
+        "meia": true
+      }
+    ]
+  },
+  {
     "id": "pala-trip",
     "titulo": "Pala Trip",
     "resumo": "Identidade visual e site para uma gravadora",
@@ -265,6 +483,50 @@
       }
     ],
     "tamanho": "largo"
+  },
+  {
+    "id": "flor-de-caju",
+    "titulo": "Flor de Caju",
+    "resumo": "Videoclipe para a Pala Trip",
+    "categorias": [
+      "cinema"
+    ],
+    "selo": "Videoclipe",
+    "ano": "2023",
+    "capa": "assets/img/trabalhos/florcaju-02.webp",
+    "video": "assets/video/flor-de-caju.mp4",
+    "cliente": "Pala Trip",
+    "descricao": [
+      "Videoclipe “Flor de Caju”, produzido para a gravadora Pala Trip."
+    ],
+    "tira": [
+      "assets/img/trabalhos/florcaju-02.webp",
+      "assets/img/trabalhos/florcaju-04.webp",
+      "assets/img/trabalhos/florcaju-01.webp"
+    ],
+    "galeria": [
+      {
+        "legenda": "Videoclipe",
+        "video_controles": "assets/video/flor-de-caju.mp4",
+        "poster": "assets/img/trabalhos/florcaju-02.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/florcaju-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/florcaju-02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/florcaju-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/florcaju-04.webp",
+        "meia": true
+      }
+    ]
   },
   {
     "id": "no-toque-da-porsche",
@@ -371,11 +633,6 @@
         "meia": true
       },
       {
-        "src": "assets/img/trabalhos/tiaregi-avental.webp",
-        "legenda": "Aventais",
-        "meia": true
-      },
-      {
         "src": "assets/img/trabalhos/tiaregi-aplicacoes.webp",
         "legenda": "Aplicações"
       }
@@ -421,7 +678,7 @@
     ],
     "selo": "Videoclipe",
     "ano": "2021",
-    "capa": "https://i.ytimg.com/vi/GYa8JXF2mxw/maxresdefault.jpg",
+    "capa": "assets/img/trabalhos/jaehit-bastidor-02.webp",
     "papel": "Produção, direção, roteiro, captação e edição (freelancer)",
     "cliente": "Jaé Hit",
     "descricao": [
@@ -435,9 +692,34 @@
       },
       {
         "youtube": "0gzxVqQWmGQ"
+      },
+      {
+        "src": "assets/img/trabalhos/jaehit-bastidor-02.webp",
+        "legenda": "Bastidores — gravação com o celular no estabilizador de PVC"
+      },
+      {
+        "src": "assets/img/trabalhos/jaehit-bastidor-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/jaehit-bastidor-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/jaehit-bastidor-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/jaehit-bastidor-05.webp",
+        "meia": true
       }
     ],
-    "tamanho": "medio"
+    "tamanho": "medio",
+    "tira": [
+      "assets/img/trabalhos/jaehit-bastidor-02.webp",
+      "assets/img/trabalhos/jaehit-bastidor-01.webp",
+      "assets/img/trabalhos/jaehit-bastidor-04.webp"
+    ]
   },
   {
     "id": "bp-seguradora",
@@ -650,20 +932,6 @@
       {
         "video": "assets/video/caracol-mao.mp4",
         "legenda": "Teste de animação"
-      },
-      {
-        "src": "assets/img/trabalhos/caracol-cena1.webp",
-        "legenda": "Storyboard — cena 1",
-        "meia": true
-      },
-      {
-        "src": "assets/img/trabalhos/caracol-cena3.webp",
-        "legenda": "Storyboard — cena 3",
-        "meia": true
-      },
-      {
-        "src": "assets/img/trabalhos/caracol-cena6.webp",
-        "legenda": "Storyboard — cena 6"
       }
     ]
   },
@@ -729,7 +997,7 @@
     ],
     "selo": "Documentário",
     "ano": "2023",
-    "capa": "https://i.ytimg.com/vi/LCDlH2Xr6YQ/maxresdefault.jpg",
+    "capa": "assets/img/trabalhos/dublagem-01.webp",
     "papel": "Direção e edição",
     "descricao": [
       "Fiz a direção e a edição do documentário no projeto de capacitação em dublagem realizado em Belo Horizonte, idealizado e produzido por Rodrigo Mangah. A iniciativa promoveu 37 horas de formação com oficinas como “O poder da palavra para o dublador” e “Dublagem: técnica e emoção”, reunindo profissionais convidados e estudantes da PUC Minas (Escola de Teatro), do CEFART e do Teatro Universitário.",
@@ -738,9 +1006,34 @@
     "galeria": [
       {
         "youtube": "LCDlH2Xr6YQ"
+      },
+      {
+        "src": "assets/img/trabalhos/dublagem-01.webp",
+        "legenda": "Oficina de dublagem",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/dublagem-02.webp",
+        "legenda": "Gravação",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/dublagem-04.webp",
+        "legenda": "Entrevista",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/dublagem-05.webp",
+        "legenda": "Estúdio",
+        "meia": true
       }
     ],
-    "tamanho": "medio"
+    "tamanho": "medio",
+    "tira": [
+      "assets/img/trabalhos/dublagem-01.webp",
+      "assets/img/trabalhos/dublagem-02.webp",
+      "assets/img/trabalhos/dublagem-04.webp"
+    ]
   },
   {
     "id": "podsincar",

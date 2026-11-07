@@ -1,5 +1,18 @@
 [
   {
+    "slug": "tcc-mascara-vocal",
+    "titulo": "A máscara vocal: estudos sobre atuação na estruturação do movimento animado",
+    "data": "2026-06-30",
+    "resumo": "Meu TCC em Cinema de Animação e Artes Digitais (UFMG): como a performance vocal constrói a identidade dos personagens, a partir de Michel Chion e do curta em stop motion Contra-Filé (2019).",
+    "capa": "assets/img/artigos/tcc-capa.webp",
+    "tags": [
+      "TCC",
+      "Animação",
+      "Voz",
+      "Pesquisa"
+    ]
+  },
+  {
     "slug": "guia-de-bolso-audio-para-filmes",
     "titulo": "Guia de bolso: captação e mixagem de áudio para filmes",
     "data": "2026-11-07",

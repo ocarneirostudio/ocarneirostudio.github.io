@@ -1,0 +1,47 @@
+[
+  {
+    "id": "o-que-esta-em-cima",
+    "titulo": "O que está em cima é como o que está embaixo",
+    "ano": "2022",
+    "local": "Belo Horizonte, MG",
+    "texto": [
+      "Série de fotografias de nuvens sobre Belo Horizonte, montada como carrossel e com intervenções caligráficas sobre as imagens.",
+      "A série foi exibida na projeção “Impermanências do visível”, no 13º Festival de Fotografia de Tiradentes, em 2024, dentro da programação do Campus Cultural UFMG."
+    ],
+    "slides": [
+      "assets/img/fotografia/correspondencia-01.webp",
+      "assets/img/fotografia/correspondencia-02.webp",
+      "assets/img/fotografia/correspondencia-03.webp",
+      "assets/img/fotografia/correspondencia-04.webp",
+      "assets/img/fotografia/correspondencia-05.webp",
+      "assets/img/fotografia/correspondencia-06.webp",
+      "assets/img/fotografia/correspondencia-07.webp",
+      "assets/img/fotografia/correspondencia-08.webp",
+      "assets/img/fotografia/correspondencia-09.webp"
+    ],
+    "video": "assets/video/correspondencia.mp4"
+  },
+  {
+    "id": "holambra",
+    "titulo": "Holambra",
+    "ano": "2024",
+    "local": "Holambra, SP",
+    "texto": [
+      "Série feita em Holambra, a cidade das flores: lavandas, abelhas, hibiscos, campos de girassol e o portal da cidade."
+    ],
+    "slides": [
+      "assets/img/fotografia/holambra-01.webp",
+      "assets/img/fotografia/holambra-02.webp",
+      "assets/img/fotografia/holambra-03.webp",
+      "assets/img/fotografia/holambra-04.webp",
+      "assets/img/fotografia/holambra-05.webp",
+      "assets/img/fotografia/holambra-06.webp",
+      "assets/img/fotografia/holambra-07.webp",
+      "assets/img/fotografia/holambra-08.webp",
+      "assets/img/fotografia/holambra-09.webp",
+      "assets/img/fotografia/holambra-10.webp",
+      "assets/img/fotografia/holambra-11.webp",
+      "assets/img/fotografia/holambra-12.webp"
+    ]
+  }
+]

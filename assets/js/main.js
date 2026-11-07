@@ -14,6 +14,7 @@ const CATEGORIAS = {
 const MENU = [
   { href: "index.html#trabalhos", texto: "Trabalhos", pagina: "inicio" },
   { href: "audiovisual.html", texto: "Audiovisual", pagina: "audiovisual" },
+  { href: "fotografia.html", texto: "Fotografia", pagina: "fotografia" },
   { href: "artigos.html", texto: "Artigos", pagina: "artigos" },
   { href: "index.html#sobre", texto: "Sobre", pagina: "sobre" },
 ];
@@ -51,6 +52,7 @@ function linksContato() {
   }
   if (SITE.youtube) l.push({ rotulo: "YouTube", valor: "Canal no YouTube", href: SITE.youtube });
   if (SITE.spotify) l.push({ rotulo: "Spotify", valor: "Ouvir no Spotify", href: SITE.spotify });
+  if (SITE.beatstars) l.push({ rotulo: "BeatStars", valor: "Loja de beats", href: SITE.beatstars });
   if (SITE.behance) l.push({ rotulo: "Behance", valor: "Behance", href: SITE.behance });
   if (SITE.linkedin) l.push({ rotulo: "LinkedIn", valor: "André Ferreira Carneiro", href: SITE.linkedin });
   if (SITE.lattes) l.push({ rotulo: "Lattes", valor: "Currículo Lattes", href: SITE.lattes });
@@ -140,11 +142,36 @@ function relogio() {
 
 /* ---------- capas do YouTube: se não houver versão HD, usa a padrão ---------- */
 function corrigirCapasYoutube(raiz = document) {
+  raiz.querySelectorAll('img[src*="hq720"]').forEach((img) => {
+    const trocar = () => { if (img.src.includes("hq720")) img.src = img.src.replace("hq720", "mqdefault"); };
+    img.addEventListener("error", trocar, { once: true });
+    const checar = () => { if (img.naturalWidth && img.naturalWidth <= 120) trocar(); };
+    if (img.complete) checar(); else img.addEventListener("load", checar, { once: true });
+  });
   raiz.querySelectorAll('img[src*="maxresdefault"]').forEach((img) => {
     const trocar = () => { img.src = img.src.replace("maxresdefault", "hqdefault"); };
     img.addEventListener("error", trocar, { once: true });
     img.addEventListener("load", () => { if (img.naturalWidth <= 120) trocar(); }, { once: true });
   });
+}
+
+/* ---------- enquadramento automático ----------
+   Se a proporção da imagem for muito diferente do espaço (ex.: pôster vertical
+   num espaço largo), ela aparece inteira sobre um fundo desfocado dela mesma. */
+function enquadrar(raiz = document) {
+  const ajustar = (img) => {
+    const q = img.closest(".quadro");
+    if (!q || !img.naturalWidth || img.style.objectPosition) return;
+    const ri = img.naturalWidth / img.naturalHeight, rq = q.clientWidth / q.clientHeight;
+    q.classList.toggle("inteira", !/ytimg/.test(img.src) && Math.max(ri / rq, rq / ri) > 2.3);
+  };
+  raiz.querySelectorAll(".quadro img").forEach((img) => {
+    if (img.complete) ajustar(img); else img.addEventListener("load", () => ajustar(img), { once: true });
+  });
+  if (!enquadrar.ouvindo) {
+    enquadrar.ouvindo = true;
+    let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => document.querySelectorAll(".quadro img").forEach(ajustar), 150); });
+  }
 }
 
 /* ---------- revelar ao rolar ---------- */
@@ -180,10 +207,11 @@ async function paginaInicio() {
 
   // cada trabalho vira uma linha com até 3 imagens (capa + galeria)
   const imagensDe = (t) => {
+    if (t.tira) return t.tira.slice(0, 3);
     const lista = [t.capa];
     (t.galeria || []).forEach((g) => {
       if (g.src) lista.push(g.src);
-      else if (g.youtube) lista.push(`https://i.ytimg.com/vi/${idYoutube(g.youtube)}/hqdefault.jpg`);
+      else if (g.youtube) lista.push(`https://i.ytimg.com/vi/${idYoutube(g.youtube)}/hq720.jpg`);
     });
     return [...new Set(lista)].filter(Boolean).slice(0, 3);
   };
@@ -194,8 +222,8 @@ async function paginaInicio() {
     return `
     <a class="projeto revelar" href="trabalho.html?id=${encodeURIComponent(t.id)}" data-categorias="${esc((t.categorias || []).join(" "))}">
       <div class="tira ${classe}">
-        ${imgs.map((src, k) => `<div class="quadro"><img src="${esc(src)}" alt="${k === 0 ? esc(t.titulo) : ""}" loading="${i < 2 ? "eager" : "lazy"}">
-          ${k === 0 && t.video ? `<video data-src="${esc(t.video)}" muted loop playsinline preload="none"></video>` : ""}</div>`).join("")}
+        ${imgs.map((item, k) => { const src = typeof item === "string" ? item : item.src; const foco = typeof item === "object" && item.foco ? ` style="object-position:${esc(item.foco)}"` : ""; return `<div class="quadro" style="--img:url('${esc(src)}')"><img src="${esc(src)}" alt="${k === 0 ? esc(t.titulo) : ""}" loading="${i < 2 ? "eager" : "lazy"}"${foco}>
+          ${k === 0 && t.video ? `<video data-src="${esc(t.video)}" muted loop playsinline preload="none"></video>` : ""}</div>`; }).join("")}
       </div>
       <div class="info">
         <h3>${esc(t.titulo)}</h3>
@@ -243,6 +271,7 @@ async function paginaInicio() {
 
   ativarVideosHover(grade);
   corrigirCapasYoutube(grade);
+  enquadrar(grade);
   revelar(grade);
 }
 
@@ -278,11 +307,31 @@ async function paginaTrabalho() {
         ${t.ano ? `<div><dt>Ano</dt><dd>${esc(t.ano)}</dd></div>` : ""}
       </dl>
     </section>
+    ${t.som ? `
+    <section class="container destaque-som revelar">
+      <div class="som-cabeca">
+        <span class="rotulo">${esc(t.som.titulo || "Som")}</span>
+        <ul class="papeis">${(t.som.papeis || []).map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+      </div>
+      ${t.som.texto ? `<p class="lead">${esc(t.som.texto)}</p>` : ""}
+      ${t.som.video ? `<div class="som-video"><video src="${esc(t.som.video)}" controls playsinline preload="metadata"${t.som.poster ? ` poster="${esc(t.som.poster)}"` : ""}></video></div>` : t.som.arquivo ? `
+        <div class="faixas"><div class="faixa-som">
+          <button class="tocar" aria-label="Tocar">${ICONE_PLAY}</button>
+          <div class="meio"><div class="cabeca"><h3>${esc(t.titulo)}</h3><div class="meta">Mixagem final</div></div>
+          <div class="onda" role="slider" aria-label="Posição" tabindex="0">${(t.som.ondas || []).map((h) => `<i style="height:${Math.max(6, h * 100)}%"></i>`).join("")}</div></div>
+          <span class="tempo">0:00</span><audio src="${esc(t.som.arquivo)}" preload="none"></audio>
+        </div></div>` : `
+        <div class="onda-estatica" aria-hidden="true">${(t.som.ondas || []).map((h) => `<i style="height:${Math.max(6, h * 100)}%"></i>`).join("")}</div>
+        <p class="nota-som">Trecho com a mixagem em breve.</p>`}
+    </section>` : ""}
     <section class="container">
-      <div class="galeria">
+      ${t.som && (t.galeria || []).length ? `<span class="rotulo" style="display:block;margin-bottom:12px">Frames do filme</span>` : ""}
+      <div class="galeria${t.som ? " pequena" : ""}">
         ${(t.galeria || []).map((g) => `
           <figure class="${g.meia ? "meia" : ""} revelar">
-            ${g.video
+            ${g.video_controles
+              ? `<video src="${esc(g.video_controles)}" controls playsinline preload="metadata"${g.poster ? ` poster="${esc(g.poster)}"` : ""}></video>`
+              : g.video
               ? `<video src="${esc(g.video)}" autoplay muted loop playsinline preload="metadata"></video>`
               : (g.youtube || g.embed)
                 ? iframeVideo(g.youtube ? "https://www.youtube-nocookie.com/embed/" + idYoutube(g.youtube) : g.embed, g.legenda || t.titulo)
@@ -292,6 +341,7 @@ async function paginaTrabalho() {
       </div>
     </section>
     ${prox && prox !== t ? `<a class="proximo" href="trabalho.html?id=${encodeURIComponent(prox.id)}"><div class="container"><small>Próximo trabalho</small><strong>${esc(prox.titulo)} →</strong></div></a>` : ""}`;
+  alvo.querySelectorAll(".faixa-som").forEach(montarPlayer);
   revelar(alvo);
 }
 
@@ -313,6 +363,7 @@ async function paginaAudiovisual() {
     const links = [];
     if (SITE.youtube) links.push(`<a class="btn" href="${esc(SITE.youtube)}" target="_blank" rel="noopener">YouTube ↗</a>`);
     if (SITE.spotify) links.push(`<a class="btn secundario" href="${esc(SITE.spotify)}" target="_blank" rel="noopener">Spotify ↗</a>`);
+    if (SITE.beatstars) links.push(`<a class="btn secundario" href="${esc(SITE.beatstars)}" target="_blank" rel="noopener">Loja de beats ↗</a>`);
     if (SITE.instagram) links.push(`<a class="btn secundario" href="https://instagram.com/${esc(SITE.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`);
     canal.innerHTML = links.join("");
   }
@@ -333,6 +384,7 @@ async function paginaAudiovisual() {
       return `<article class="video-card revelar">
         <div class="tela">${tela}</div>
         <div class="txt"><h3>${esc(v.titulo)}</h3>${v.descricao ? `<p>${esc(v.descricao)}</p>` : ""}</div>
+        ${v.loja && SITE.beatstars ? `<a class="licenciar" href="${esc(SITE.beatstars)}" target="_blank" rel="noopener"><span>À venda · a partir de ${esc(v.loja)}</span><b>Licenciar no BeatStars ↗</b></a>` : ""}
       </article>`;
     };
     blocos.forEach((bloco) => {
@@ -360,6 +412,11 @@ async function paginaAudiovisual() {
     listas.forEach((lista) => {
       const audios = sons.filter((s) => (s.secao || "sound-design") === lista.dataset.secao && s.arquivo);
       let html = "";
+      if (lista.dataset.secao === "musica" && SITE.beatstars) {
+        html += `<a class="loja-beats revelar" href="${esc(SITE.beatstars)}" target="_blank" rel="noopener">
+          <span class="rotulo">Loja</span><strong>Beats à venda no BeatStars</strong>
+          <span class="loja-info">Licenças a partir de US$ 10 · prod. OCARNEIRO</span><span class="loja-seta">↗</span></a>`;
+      }
       if (lista.dataset.secao === "musica" && SITE.spotify) {
         const id = (SITE.spotify.match(/artist\/([A-Za-z0-9]+)/) || [])[1];
         if (id) html += `<div class="spotify revelar"><iframe src="https://open.spotify.com/embed/artist/${id}?utm_source=generator&theme=0" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Ocarneiro Studio no Spotify"></iframe></div>`;
@@ -419,6 +476,50 @@ function montarPlayer(el) {
     if (e.key === "ArrowRight") audio.currentTime += 5;
     if (e.key === "ArrowLeft") audio.currentTime -= 5;
   });
+}
+
+/* ==========================================================
+   FOTOGRAFIA — séries em carrossel
+   ========================================================== */
+async function paginaFotografia() {
+  const alvo = $("#series");
+  if (!alvo) return;
+  let series = [];
+  try { series = await carregar("conteudo/fotografia.json"); } catch (e) {}
+  alvo.innerHTML = series.map((se, i) => `
+    <section class="secao serie" id="${esc(se.id)}" ${i ? 'style="padding-top:0"' : ""}>
+      <div class="container">
+        <div class="serie-topo">
+          <div>
+            <span class="rotulo">(${String(i + 1).padStart(2, "0")}) ${esc(se.local || "")} · ${esc(se.ano || "")}</span>
+            <h2 class="titulo-secao">${esc(se.titulo)}</h2>
+          </div>
+          <div class="serie-texto">${(se.texto || []).map((t) => `<p>${esc(t)}</p>`).join("")}</div>
+        </div>
+      </div>
+      <div class="carrossel-moldura">
+        <div class="carrossel" tabindex="0" aria-label="Fotos da série ${esc(se.titulo)} — role para o lado">
+          ${se.slides.map((src, k) => `<img src="${esc(src)}" alt="${esc(se.titulo)}, imagem ${k + 1}" loading="${i === 0 && k < 3 ? "eager" : "lazy"}" draggable="false">`).join("")}
+        </div>
+        <div class="container carrossel-nav">
+          <span class="contador">${se.slides.length} imagens · arraste para o lado</span>
+          <span><button class="seta-car" data-dir="-1" aria-label="Anterior">←</button><button class="seta-car" data-dir="1" aria-label="Próxima">→</button></span>
+        </div>
+      </div>
+      ${se.video ? `<div class="container serie-video revelar"><video src="${esc(se.video)}" controls playsinline preload="metadata"></video></div>` : ""}
+    </section>`).join("");
+
+  alvo.querySelectorAll(".carrossel-moldura").forEach((m) => {
+    const c = $(".carrossel", m);
+    m.querySelectorAll(".seta-car").forEach((b) => b.addEventListener("click", () => c.scrollBy({ left: +b.dataset.dir * c.clientHeight, behavior: "smooth" })));
+    // arrastar com o mouse
+    let x0 = 0, s0 = 0, arrastando = false;
+    c.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") return; arrastando = true; x0 = e.clientX; s0 = c.scrollLeft; c.classList.add("arrastando"); });
+    addEventListener("pointermove", (e) => { if (arrastando) c.scrollLeft = s0 - (e.clientX - x0); });
+    addEventListener("pointerup", () => { arrastando = false; c.classList.remove("arrastando"); });
+  });
+  revelar(alvo);
+  if (location.hash) { const el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
 }
 
 /* ==========================================================
@@ -511,6 +612,7 @@ function paginaContato() {
   paginaTrabalho();
   paginaAudiovisual();
   paginaArtigos();
+  paginaFotografia();
   paginaArtigo();
   paginaContato();
 })();
