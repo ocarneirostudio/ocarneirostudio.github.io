@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato — Ocarneiro Studio</title>
+  <meta name="description" content="Fale com o Ocarneiro Studio.">
+  <meta name="theme-color" content="#0b0b0e">
+  <meta property="og:title" content="Contato — Ocarneiro Studio">
+  <meta property="og:description" content="Fale com o Ocarneiro Studio.">
+  <meta property="og:image" content="https://ocarneirostudio.github.io/assets/img/og-mark.webp">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-pagina="contato">
+  <div id="topo"></div>
+  <main>
+
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="eyebrow">Contato</span>
+        <h1>Vamos criar<br>juntos?</h1>
+        <p class="lead">Conte sobre o seu projeto: identidade visual, ilustração, animação, trilha ou mixagem. Respondo o mais rápido possível.</p>
+      </div>
+    </section>
+    <section class="container">
+      <div class="contato-grade">
+        <div class="contato-links revelar" id="links-contato"></div>
+        <form class="form revelar" id="form-contato" hidden>
+          <label>Seu nome<input name="nome" required autocomplete="name"></label>
+          <label>Tipo de projeto
+            <select name="tipo">
+              <option>Design / Identidade visual</option>
+              <option>Ilustração</option>
+              <option>Motion / Animação</option>
+              <option>Sound design / Mixagem</option>
+              <option>Cinema / Fotografia</option>
+              <option>Outro</option>
+            </select>
+          </label>
+          <label>Mensagem<textarea name="mensagem" required></textarea></label>
+          <button class="btn" type="submit">Enviar mensagem →</button>
+          <p class="nota">Ao enviar, o seu aplicativo de e-mail abre com a mensagem pronta.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div id="rodape"></div>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

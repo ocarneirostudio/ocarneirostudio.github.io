@@ -3,37 +3,110 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>O Carneiro Studio</title>
-  <meta name="description" content="Design, motion design, ilustração e sound design.">
-  <style>
-    :root { --bg: #0e0e0e; --fg: #f2f2f2; --muted: #8a8a8a; }
-    * { margin: 0; box-sizing: border-box; }
-    body {
-      min-height: 100vh; display: grid; place-items: center;
-      background: var(--bg); color: var(--fg);
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      padding: 24px; text-align: center;
-    }
-    h1 { font-size: clamp(2rem, 7vw, 4.5rem); letter-spacing: -0.03em; font-weight: 700; }
-    p { margin-top: 1rem; color: var(--muted); font-size: clamp(0.95rem, 2.5vw, 1.15rem); }
-    .tags { margin-top: 2rem; display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
-    .tags span {
-      border: 1px solid #333; border-radius: 999px; padding: 0.4rem 0.9rem;
-      font-size: 0.85rem; animation: fade 0.8s ease both;
-    }
-    .tags span:nth-child(2) { animation-delay: 0.15s; }
-    .tags span:nth-child(3) { animation-delay: 0.3s; }
-    .tags span:nth-child(4) { animation-delay: 0.45s; }
-    @keyframes fade { from { opacity: 0; transform: translateY(8px); } }
-  </style>
+  <title>Ocarneiro Studio — Audiovisual e Criatividade</title>
+  <meta name="description" content="Ocarneiro Studio — estúdio de audiovisual e criatividade. Design, motion design, ilustração e sound design.">
+  <meta name="theme-color" content="#0b0b0e">
+  <meta property="og:title" content="Ocarneiro Studio — Audiovisual e Criatividade">
+  <meta property="og:description" content="Ocarneiro Studio — estúdio de audiovisual e criatividade. Design, motion design, ilustração e sound design.">
+  <meta property="og:image" content="https://ocarneirostudio.github.io/assets/img/og-mark.webp">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body data-pagina="inicio">
+  <div id="topo"></div>
   <main>
-    <h1>O Carneiro Studio</h1>
-    <p>Portfólio em construção. Em breve.</p>
-    <div class="tags">
-      <span>Design</span><span>Motion Design</span><span>Ilustração</span><span>Sound Design</span>
+
+    <section class="hero">
+      <div class="foto" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-conteudo">
+          <span class="eyebrow">Estúdio audiovisual de criatividade</span>
+          <h1>
+            <span class="linha"><span>Ideias que</span></span>
+            <span class="linha"><span>a gente <span class="destaque">vê</span> e</span></span>
+            <span class="linha"><span><span class="destaque">escuta.</span></span></span>
+          </h1>
+          <p class="lead">Design, motion design, ilustração e sound design. Do primeiro rabisco à mixagem final, para marcas, artistas e filmes.</p>
+          <div class="acoes">
+            <a class="btn" href="#trabalhos">Ver trabalhos <span aria-hidden="true">↓</span></a>
+            <a class="btn secundario" href="contato.html">Vamos conversar</a>
+          </div>
+        </div>
+      </div>
+      <span class="rolar">Role</span>
+    </section>
+
+    <div class="areas-faixa" aria-hidden="true">
+      <div class="trilho">
+        <span>Design</span><span>Motion Design</span><span>Ilustração</span><span>Sound Design</span><span>Cinema</span><span>Animação</span><span>Mixagem</span><span>Fotografia</span>
+        <span>Design</span><span>Motion Design</span><span>Ilustração</span><span>Sound Design</span><span>Cinema</span><span>Animação</span><span>Mixagem</span><span>Fotografia</span>
+      </div>
     </div>
+
+    <section class="secao" id="trabalhos">
+      <div class="container">
+        <div class="secao-topo">
+          <div class="revelar">
+            <span class="eyebrow">Portfólio</span>
+            <h2 class="titulo-secao">Trabalhos <em>selecionados</em></h2>
+          </div>
+          <div class="filtros revelar" id="filtros" role="group" aria-label="Filtrar por área"></div>
+        </div>
+        <div class="grade" id="grade-trabalhos"><p class="carregando">Carregando trabalhos…</p></div>
+      </div>
+    </section>
+
+    <section class="secao" id="servicos" style="padding-top:0">
+      <div class="container">
+        <div class="secao-topo revelar">
+          <div>
+            <span class="eyebrow">O que eu faço</span>
+            <h2 class="titulo-secao">Uma ideia, <em>vários formatos</em></h2>
+          </div>
+        </div>
+        <div class="servicos">
+          <article class="servico revelar"><span class="num">01</span><h3>Design</h3><p>Identidade visual que conta a história da marca, do logotipo aos cartões de visita e às redes sociais.</p></article>
+          <article class="servico revelar"><span class="num">02</span><h3>Motion &amp; Animação</h3><p>Ideias em movimento: animação, teasers, letreiros e peças para cinema e redes.</p></article>
+          <article class="servico revelar"><span class="num">03</span><h3>Ilustração</h3><p>Personagens, capas, embalagens e livros, com um universo visual próprio para cada projeto.</p></article>
+          <article class="servico revelar"><span class="num">04</span><h3>Sound Design &amp; Mixagem</h3><p>Trilha, desenho de som, foley e mixagem para música e filmes.</p></article>
+          <article class="servico revelar"><span class="num">05</span><h3>Cinema &amp; Fotografia</h3><p>Da pré-produção à pós, com um olhar atento para contar histórias em imagem.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="sobre" style="background:var(--fundo-2)">
+      <div class="container sobre">
+        <div class="retrato revelar"><img src="assets/img/hero.webp" alt="André Ferreira Carneiro com uma câmera" loading="lazy"></div>
+        <div class="revelar">
+          <span class="eyebrow">Sobre</span>
+          <h2 class="titulo-secao">Oi, eu sou o <em>Carneiro</em>.</h2>
+          <p>Sou André Ferreira Carneiro, graduando em Cinema de Animação e Artes Digitais pela UFMG e formado em Produção Digital e Games. O Ocarneiro Studio é onde junto tudo isso: design, ilustração, animação e som.</p>
+          <p>Há mais de 3 anos trabalho como técnico audiovisual na Scriptus Comunicação, com operação de áudio e vídeo, mixagem (inclusive 5.1), controle de qualidade e fluxos de produção. Também faço som direto, sonorização, design de personagens e animação 2D.</p>
+          <div class="numeros">
+            <div><b>3+ anos</b><span>técnico audiovisual · Scriptus</span></div>
+            <div><b>UFMG</b><span>Cinema de Animação e Artes Digitais</span></div>
+            <div><b>5.1</b><span>mixagem para cinema</span></div>
+          </div>
+          <p style="font-size:.85rem;color:var(--texto-3);margin-top:2rem">Ferramentas: Adobe Creative Cloud · Pro Tools · iZotope RX 11 · Webflow</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chamada">
+      <div class="container revelar">
+        <span class="eyebrow">Tem um projeto?</span>
+        <h2 style="margin-top:1rem">Vamos criar algo<br>que <span style="color:var(--laranja)">fique na memória</span>.</h2>
+        <div class="acoes">
+          <a class="btn" href="contato.html">Entrar em contato</a>
+          <a class="btn secundario" href="audiovisual.html">Ver audiovisual</a>
+        </div>
+      </div>
+    </section>
   </main>
+  <div id="rodape"></div>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

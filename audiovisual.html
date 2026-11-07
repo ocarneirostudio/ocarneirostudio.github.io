@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audiovisual — Ocarneiro Studio</title>
+  <meta name="description" content="Vídeos, animações e sound design do Ocarneiro Studio.">
+  <meta name="theme-color" content="#0b0b0e">
+  <meta property="og:title" content="Audiovisual — Ocarneiro Studio">
+  <meta property="og:description" content="Vídeos, animações e sound design do Ocarneiro Studio.">
+  <meta property="og:image" content="https://ocarneirostudio.github.io/assets/img/og-mark.webp">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-pagina="audiovisual">
+  <div id="topo"></div>
+  <main>
+
+    <section class="pagina-topo">
+      <div class="container">
+        <span class="eyebrow">Audiovisual</span>
+        <h1>Imagem em<br>movimento &amp; som.</h1>
+        <p class="lead">Vídeos, animações, trilhas e desenho de som. Aperte o play.</p>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-bottom:0">
+      <div class="container">
+        <div class="canal revelar" id="canal"></div>
+        <div class="secao-topo revelar"><div><span class="eyebrow">Vídeos</span><h2 class="titulo-secao">Motion &amp; <em>cinema</em></h2></div></div>
+        <div class="videos" id="lista-videos"><p class="carregando">Carregando vídeos…</p></div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="secao-topo revelar">
+          <div><span class="eyebrow">Sound design</span><h2 class="titulo-secao">Para <em>ouvir</em></h2></div>
+          <p class="lead" style="max-width:40ch">Trechos de trilhas e desenho de som. Use fones para ouvir melhor.</p>
+        </div>
+        <div class="faixas" id="lista-sons"><p class="carregando">Carregando sons…</p></div>
+      </div>
+    </section>
+  </main>
+  <div id="rodape"></div>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

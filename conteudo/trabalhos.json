@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "1936",
+    "titulo": "1936",
+    "resumo": "Direção de arte e personagens para um jogo",
+    "categorias": [
+      "ilustracao",
+      "design"
+    ],
+    "selo": "Game Art",
+    "ano": "2025",
+    "tamanho": "largo",
+    "capa": "assets/img/trabalhos/1936-alfredo.webp",
+    "papel": "Direção de arte, design de personagem e identidade visual",
+    "descricao": [
+      "1936 é um jogo de ação ambientado no sertão nordestino, onde o folclore brasileiro ganha vida. O jogador é Alfredo, um pescador que caça as criaturas que estão aterrorizando a cidade para conseguir a vacina que pode salvar a filha.",
+      "O trabalho envolveu a arte promocional, os concepts de personagens e criaturas, como Alfredo e a Mula sem Cabeça, e o guia de marca do jogo, com tipografia, paleta e estilo de arte."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/1936-capa.webp",
+        "legenda": "Arte promocional"
+      },
+      {
+        "src": "assets/img/trabalhos/1936-alfredo.webp",
+        "legenda": "Concept — Alfredo, personagem jogável"
+      },
+      {
+        "src": "assets/img/trabalhos/1936-mula.webp",
+        "legenda": "Concept — Mula sem Cabeça"
+      },
+      {
+        "src": "assets/img/trabalhos/1936-guia-1.webp",
+        "legenda": "Guia de marca",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/1936-guia-2.webp",
+        "legenda": "Estilo de arte",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/1936-guia-3.webp",
+        "legenda": "Tipografia e paleta"
+      }
+    ]
+  },
+  {
+    "id": "super-jhon",
+    "titulo": "Tô Impressionando",
+    "resumo": "Capa e personagem 3D para o Super Jhon",
+    "categorias": [
+      "ilustracao",
+      "motion"
+    ],
+    "selo": "Capa & 3D",
+    "ano": "2025",
+    "tamanho": "",
+    "capa": "assets/img/trabalhos/jhon-capa.webp",
+    "video": "assets/video/jhon-piscada.mp4",
+    "papel": "Ilustração, personagem 3D e animação",
+    "descricao": [
+      "Capa para o lançamento “Tô Impressionando”, com caricatura ilustrada do artista e uma versão em 3D do personagem, estilo vinil colecionável, usada em peças animadas."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/jhon-capa.webp",
+        "legenda": "Capa",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/jhon-3d.webp",
+        "legenda": "Personagem 3D",
+        "meia": true
+      },
+      {
+        "video": "assets/video/jhon-piscada.mp4",
+        "legenda": "Teste de animação"
+      },
+      {
+        "src": "assets/img/trabalhos/jhon-fundo.webp",
+        "legenda": "Arte de apoio"
+      }
+    ]
+  },
+  {
+    "id": "trip-sessions",
+    "titulo": "Trip Sessions 01 — Cego",
+    "resumo": "Motion design e edição para a Palatrip Sessions",
+    "categorias": [
+      "motion",
+      "cinema"
+    ],
+    "selo": "Motion Design",
+    "ano": "2026",
+    "capa": "https://i.ytimg.com/vi/6N3FVEOtd3o/maxresdefault.jpg",
+    "papel": "Edição, finalização e motion design",
+    "descricao": [
+      "Foi muito gratificante participar da Palatrip Sessions, um projeto que valoriza e dá visibilidade aos cantores e MCs de diversas vertentes do Norte de Minas. No motion design, meu objetivo foi criar elementos visuais que complementassem a identidade do projeto e reforçassem a energia das apresentações, contribuindo para uma experiência audiovisual mais dinâmica e envolvente.",
+      "DJ: Drew (@djdreww_) · MC: Cego (@ocegoquetudove) · Captação de imagem: Rafa5k (@rafa.5k) e André Carneiro · Edição, finalização e motion design: André Carneiro · Captação de som: Márcio Martins (@osurdoqueouve) · Beats: Caio Passos (@caiopassosbeats) · Produção: Palatrip (@palatrip) e André Carneiro"
+    ],
+    "galeria": [
+      {
+        "youtube": "6N3FVEOtd3o"
+      }
+    ],
+    "tamanho": "medio"
+  },
+  {
+    "id": "filmes-mixados",
+    "titulo": "Filmes Mixados",
+    "resumo": "Dublagem e mixagem de filmes para streaming",
+    "categorias": [
+      "som",
+      "cinema"
+    ],
+    "selo": "Mixagem",
+    "ano": "2026",
+    "capa": "https://i.ytimg.com/vi/MBorpBIU9rs/maxresdefault.jpg",
+    "papel": "Mixagem sonora",
+    "cliente": "Scriptus Comunicação",
+    "descricao": [
+      "Uma coleção de filmes dublados com mixagem sonora feita por André Ferreira Carneiro para a Scriptus Comunicação. Cada produção foi trabalhada para oferecer uma experiência auditiva envolvente, aprimorando a narrativa através do som.",
+      "Disponíveis para streaming no Lokie e no Prime Video."
+    ],
+    "galeria": [
+      {
+        "embed": "https://www.youtube-nocookie.com/embed/videoseries?list=PLczrVKrXxVwsPHCVyI1Uaw6hdGcDkwuhm",
+        "legenda": "Playlist completa"
+      },
+      {
+        "youtube": "MBorpBIU9rs",
+        "meia": true
+      },
+      {
+        "youtube": "kdKI97c6QB4",
+        "meia": true
+      },
+      {
+        "youtube": "ux6QHrVzQPA",
+        "meia": true
+      },
+      {
+        "youtube": "z_dlW3dL2Bg",
+        "meia": true
+      },
+      {
+        "youtube": "JLzs0AuMHYU",
+        "meia": true
+      },
+      {
+        "youtube": "eZwZ1ldymsg",
+        "meia": true
+      },
+      {
+        "youtube": "B9ytpe8kpL0",
+        "meia": true
+      },
+      {
+        "youtube": "xdEV4Ob9_Kc",
+        "meia": true
+      },
+      {
+        "youtube": "LBqXL62Zgug",
+        "meia": true
+      },
+      {
+        "youtube": "xdLYQjY8fvA",
+        "meia": true
+      }
+    ],
+    "tamanho": "medio"
+  },
+  {
+    "id": "aureos",
+    "titulo": "Aureos",
+    "resumo": "Animação de apresentação para a empresa",
+    "categorias": [
+      "motion"
+    ],
+    "selo": "Motion Design",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/aureos-capa.webp",
+    "papel": "Animação e motion design",
+    "cliente": "Aureos",
+    "descricao": [
+      "Animação feita para divulgação da empresa Aureos."
+    ],
+    "galeria": [
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/MPvVGujqKWZ/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "legenda": "Animação"
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-05.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-06.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-07.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-08.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-09.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-10.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-11.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aureos-12.webp",
+        "meia": true
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "pala-trip",
+    "titulo": "Pala Trip",
+    "resumo": "Identidade visual e site para uma gravadora",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Identidade & Web",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/palatrip-capa.webp",
+    "papel": "Identidade visual e desenvolvimento do site (Webflow)",
+    "cliente": "Pala Trip",
+    "descricao": [
+      "Pala Trip é uma gravadora independente para a qual desenvolvi a identidade visual e o website, criando uma presença digital que traduzisse a estética sonora e o posicionamento artístico do selo.",
+      "O projeto partiu da construção de uma linguagem visual própria, explorando tipografia, cores e elementos gráficos que reforçam personalidade, atmosfera e reconhecimento de marca. A identidade foi desenhada para ser versátil, funcionando tanto no digital quanto em peças promocionais dos artistas e lançamentos.",
+      "Também desenvolvi o site em Webflow, estruturando a navegação, a hierarquia de informações e a experiência do usuário, para apresentar a gravadora, seus artistas e projetos de forma clara e imersiva."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/palatrip-01.webp"
+      }
+    ],
+    "tamanho": "largo"
+  },
+  {
+    "id": "drill-life",
+    "titulo": "Drill Life",
+    "resumo": "Capa ilustrada e retratos dos MCs",
+    "categorias": [
+      "ilustracao"
+    ],
+    "selo": "Ilustração",
+    "ano": "2025",
+    "tamanho": "",
+    "capa": "assets/img/trabalhos/drill-capa.webp",
+    "papel": "Ilustração",
+    "descricao": [
+      "Capa ilustrada reunindo os MCs do projeto Drill Life e uma série de retratos individuais de cada artista."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/drill-capa.webp",
+        "legenda": "Capa"
+      },
+      {
+        "src": "assets/img/trabalhos/drill-mc01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/drill-mc02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/drill-mc04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/drill-mc05.webp",
+        "meia": true
+      }
+    ]
+  },
+  {
+    "id": "no-toque-da-porsche",
+    "titulo": "No Toque da Porsche",
+    "resumo": "Capa do single de Michas (prod. Palatrip)",
+    "categorias": [
+      "ilustracao"
+    ],
+    "selo": "Capa",
+    "ano": "2025",
+    "capa": "assets/img/trabalhos/porsche-capa.webp",
+    "papel": "Ilustração e design de capa",
+    "descricao": [
+      "Ilustração e capa para o single “No Toque da Porsche”, de Michas, com produção da Palatrip."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/porsche-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/porsche-02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/porsche-04.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/porsche-03.webp"
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "baile-na-minha-cama",
+    "titulo": "Baile na Minha Cama",
+    "resumo": "Ilustração de capa de single",
+    "categorias": [
+      "ilustracao"
+    ],
+    "selo": "Capa",
+    "ano": "2025",
+    "capa": "assets/img/trabalhos/baile-capa.webp",
+    "papel": "Ilustração e lettering",
+    "descricao": [
+      "Ilustração e lettering para a capa do single “Baile na Minha Cama”."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/baile-01.webp"
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "tia-regi",
+    "titulo": "Biscoitos Tia Regi",
+    "resumo": "Rebranding de uma marca de biscoitos artesanais",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Identidade Visual",
+    "ano": "2024",
+    "tamanho": "largo",
+    "capa": "assets/img/trabalhos/tiaregi-logo.webp",
+    "papel": "Projeto gráfico e diagramação",
+    "descricao": [
+      "Rebranding completo da Biscoitos Tia Regi. O conceito une um estilo artesanal e pessoal a uma marca tradicional e confiável.",
+      "O projeto foi da escolha de cores, tipografia e logotipo até a aplicação em impressos, embalagens, uniformes e peças digitais."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/tiaregi-logo.webp",
+        "legenda": "Logotipo"
+      },
+      {
+        "src": "assets/img/trabalhos/tiaregi-cores.webp",
+        "legenda": "Paleta de cores"
+      },
+      {
+        "src": "assets/img/trabalhos/tiaregi-cartao.webp",
+        "legenda": "Cartão de visita",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/tiaregi-avental.webp",
+        "legenda": "Aventais",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/tiaregi-aplicacoes.webp",
+        "legenda": "Aplicações"
+      }
+    ]
+  },
+  {
+    "id": "dj-drew",
+    "titulo": "DJ Drew",
+    "resumo": "Branding para DJ",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Identidade Visual",
+    "ano": "2025",
+    "capa": "assets/img/trabalhos/djdrew-capa.webp",
+    "papel": "Identidade visual",
+    "cliente": "DJ Drew",
+    "descricao": [
+      "Identidade visual do DJ Drew, com logotipo, símbolo e aplicações."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/djdrew-01.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/djdrew-02.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/djdrew-03.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/djdrew-04.webp"
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "jae-hit",
+    "titulo": "Clipes Jaé Hit",
+    "resumo": "Videoclipes feitos com dois celulares",
+    "categorias": [
+      "cinema"
+    ],
+    "selo": "Videoclipe",
+    "ano": "2026",
+    "capa": "https://i.ytimg.com/vi/GYa8JXF2mxw/maxresdefault.jpg",
+    "papel": "Produção, direção, roteiro, captação e edição",
+    "cliente": "Jaé Hit",
+    "descricao": [
+      "A produção de um videoclipe pode não parecer, à primeira vista, mas é um processo complexo, especialmente quando não se conta com uma equipe estruturada. Nestes vídeos, atuei como produtor, videomaker, diretor, roteirista e editor para a produtora Jaé Hit, com a colaboração de Herbert Diego como segundo operador de câmera.",
+      "Sem equipamentos dedicados, usei dois smartphones como câmeras: um iPhone 8 e um Galaxy S9+. Construí um suporte de câmera com canos de PVC, gravei às 16h para aproveitar a luz natural, travei foco e exposição e ajustei na pós-produção as diferenças de cor entre os dois aparelhos.",
+      "O mais importante é não esperar as condições ideais: é começar e colocar as ideias em prática."
+    ],
+    "galeria": [
+      {
+        "youtube": "GYa8JXF2mxw"
+      },
+      {
+        "youtube": "0gzxVqQWmGQ"
+      }
+    ],
+    "tamanho": "medio"
+  },
+  {
+    "id": "bp-seguradora",
+    "titulo": "BP Seguradora",
+    "resumo": "Série de peças em motion design",
+    "categorias": [
+      "motion"
+    ],
+    "selo": "Motion Design",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/bp-capa.webp",
+    "papel": "Motion design",
+    "cliente": "BP Seguradora",
+    "descricao": [
+      "Série de peças animadas em motion design para a BP Seguradora."
+    ],
+    "galeria": [
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/ChnjB2m3ZMz/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "meia": true
+      },
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/9yH8uxVjQXs/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "meia": true
+      },
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/PNEGknGKDhR/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "meia": true
+      },
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/JmqFrmxI5We/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "meia": true
+      },
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/QdxGv7qL52d/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "meia": true
+      },
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/EQE2ES8pcCK/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "meia": true
+      },
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/RWyRtycNpG3/embed?bgcolor=%23191919&api_key=BehancePro2View"
+      }
+    ],
+    "tamanho": "medio"
+  },
+  {
+    "id": "a-outra-margem",
+    "titulo": "A Outra Margem",
+    "resumo": "Jornal-catálogo e teaser de um festival de cinema",
+    "categorias": [
+      "design",
+      "motion"
+    ],
+    "selo": "Editorial",
+    "ano": "2024",
+    "tamanho": "",
+    "capa": "assets/img/trabalhos/aom-capa.webp",
+    "video": "assets/video/aom-teaser.mp4",
+    "papel": "Design editorial e teaser",
+    "descricao": [
+      "Jornal-catálogo da 2ª edição do Circuito A Outra Margem, em Januária (MG). Reúne a programação de sessões, a agenda formativa, o mapa do circuito e textos sobre os filmes.",
+      "Também fiz o teaser animado de divulgação do festival."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/aom-capa.webp",
+        "legenda": "Capa",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aom-pag1.webp",
+        "legenda": "Página de abertura",
+        "meia": true
+      },
+      {
+        "video": "assets/video/aom-teaser.mp4",
+        "legenda": "Teaser"
+      },
+      {
+        "src": "assets/img/trabalhos/aom-pag2.webp",
+        "legenda": "Programação",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/aom-mapa.webp",
+        "legenda": "Mapa do circuito",
+        "meia": true
+      }
+    ]
+  },
+  {
+    "id": "design-editorial",
+    "titulo": "Estudos de Design Editorial",
+    "resumo": "Revista, layout e tipografia",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Editorial",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/editorial-capa.webp",
+    "papel": "Design editorial",
+    "descricao": [
+      "Estudos de design editorial: diagramação, grid, tipografia e capa de revista."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/editorial-01.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/editorial-02.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/editorial-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/editorial-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/editorial-05.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/editorial-06.webp",
+        "meia": true
+      }
+    ],
+    "tamanho": "largo"
+  },
+  {
+    "id": "agaraga",
+    "titulo": "Agaragã",
+    "resumo": "Ilustrações de divulgação do single do Super John",
+    "categorias": [
+      "ilustracao"
+    ],
+    "selo": "Ilustração",
+    "ano": "2025",
+    "capa": "assets/img/trabalhos/agaraga-capa.webp",
+    "papel": "Ilustração",
+    "descricao": [
+      "Ilustrações de divulgação do single “Agaragã”, do Super John, em estilo de quadrinhos."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/agaraga-01.webp"
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "moon-store",
+    "titulo": "Moon Store",
+    "resumo": "Identidade visual para loja",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Identidade Visual",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/moonstore-capa.webp",
+    "papel": "Identidade visual",
+    "cliente": "Moon Store",
+    "descricao": [
+      "Identidade visual da Moon Store, com logotipo e aplicações."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/moonstore-01.webp"
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "caracol",
+    "titulo": "Estudos sobre Animação — Mão",
+    "resumo": "Adaptação animada de um quadrinho",
+    "categorias": [
+      "motion"
+    ],
+    "selo": "Animação",
+    "ano": "2026",
+    "tamanho": "",
+    "capa": "assets/img/trabalhos/caracol-capa.webp",
+    "video": "assets/video/caracol-mao.mp4",
+    "papel": "Animação e design de som",
+    "descricao": [
+      "Estudo de animação no Adobe Photoshop e no Adobe After Effects, explorando a adaptação do quadrinho Mão, do artista e amigo koha.alonso, para o formato de curta-metragem animado.",
+      "O processo envolve a decupagem das páginas, a separação de camadas, a construção de keyframes e experimentações de movimento que respeitam o traço original, ao mesmo tempo em que ampliam a narrativa por meio de ritmo, transições e design de som."
+    ],
+    "galeria": [
+      {
+        "embed": "https://www-ccv.adobe.io/v1/player/ccv/UcWLjLjB_XV/embed?bgcolor=%23191919&api_key=BehancePro2View",
+        "legenda": "Estudo de animação"
+      },
+      {
+        "video": "assets/video/caracol-mao.mp4",
+        "legenda": "Teste de animação"
+      },
+      {
+        "src": "assets/img/trabalhos/caracol-cena1.webp",
+        "legenda": "Storyboard — cena 1",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/caracol-cena3.webp",
+        "legenda": "Storyboard — cena 3",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/caracol-cena6.webp",
+        "legenda": "Storyboard — cena 6"
+      }
+    ]
+  },
+  {
+    "id": "belo-horror",
+    "titulo": "Belo Horror",
+    "resumo": "Documentário experimental sobre os bares de BH",
+    "categorias": [
+      "cinema",
+      "som"
+    ],
+    "selo": "Cinema",
+    "ano": "2024",
+    "tamanho": "largo",
+    "capa": "assets/img/trabalhos/belohorror-capa.webp",
+    "papel": "Roteiro e produção",
+    "descricao": [
+      "Documentário experimental sobre bares de Belo Horizonte em áreas afetadas pela gentrificação. O filme trata o bar como um reservatório de memória, tanto social quanto do espaço, e reflete sobre a cidade e suas transformações.",
+      "O som tem papel central: um banco de áudio com foleys, vozes e ambiências compõe um retrato sonoro belo-horizontino a partir da perspectiva do bar.",
+      "Roteiro e produção: André, Mariana e Pedro. Direção: Guilherme."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/belohorror-capa.webp",
+        "legenda": "Identidade do filme",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/belohorror-doc.webp",
+        "legenda": "Projeto do filme",
+        "meia": true
+      }
+    ]
+  },
+  {
+    "id": "desenvolva-se",
+    "titulo": "Desenvolva-se UFMG",
+    "resumo": "Comunicação de um projeto de extensão da UFMG",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Comunicação",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/desenvolva-capa.webp",
+    "papel": "Identidade visual e comunicação",
+    "cliente": "Escola de Veterinária — UFMG",
+    "descricao": [
+      "O Grupo Desenvolva-se UFMG é um projeto vinculado à Pró-Reitoria de Extensão (PROEX) da UFMG, realizado durante meu estágio na Assessoria de Comunicação da Escola de Veterinária. O grupo nasceu para aproximar médicos-veterinários e profissionais de diferentes áreas, promovendo competências técnicas e, principalmente, habilidades humanas essenciais para a atuação profissional.",
+      "No projeto, a comunicação teve papel fundamental na construção da identidade da iniciativa e na divulgação das ações, fortalecendo o alcance do grupo e sua proposta de unir desenvolvimento técnico e humano dentro da universidade."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/desenvolva-01.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-02.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-03.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-05.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-06.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-07.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-08.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-09.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-10.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-11.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-12.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-13.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/desenvolva-14.webp",
+        "meia": true
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "dublagem-mineira",
+    "titulo": "Dublagem Mineira",
+    "resumo": "Documentário sobre formação em dublagem em BH",
+    "categorias": [
+      "cinema"
+    ],
+    "selo": "Documentário",
+    "ano": "2026",
+    "capa": "https://i.ytimg.com/vi/LCDlH2Xr6YQ/maxresdefault.jpg",
+    "papel": "Codireção e montagem",
+    "descricao": [
+      "Participei como codiretor do documentário e editor no projeto de capacitação em dublagem realizado em Belo Horizonte, idealizado e produzido por Rodrigo Mangah. A iniciativa promoveu 37 horas de formação com oficinas como “O poder da palavra para o dublador” e “Dublagem: técnica e emoção”, reunindo profissionais convidados e estudantes da PUC Minas (Escola de Teatro), do CEFART e do Teatro Universitário.",
+      "O projeto culminou na mostra “Cine Minas”, com exibição de filmes dublados e participação de dubladores convidados. Na produção audiovisual, feita em parceria com Luís Octávio e com apoio da Scriptus Comunicação, atuei na construção narrativa e na montagem do documentário."
+    ],
+    "galeria": [
+      {
+        "youtube": "LCDlH2Xr6YQ"
+      }
+    ],
+    "tamanho": "medio"
+  },
+  {
+    "id": "outubro-rosa",
+    "titulo": "Outubro Rosa",
+    "resumo": "Montagens para campanha",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Social",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/outubro-rosa-capa.webp",
+    "papel": "Montagem e design",
+    "descricao": [
+      "Montagens de fotos e peças para redes sociais da campanha Outubro Rosa."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/outubro-rosa-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/outubro-rosa-02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/outubro-rosa-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/outubro-rosa-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/outubro-rosa-05.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/outubro-rosa-06.webp",
+        "meia": true
+      }
+    ],
+    "tamanho": "medio"
+  },
+  {
+    "id": "podsincar",
+    "titulo": "PodSincar",
+    "resumo": "Identidade visual para um podcast",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Identidade Visual",
+    "ano": "2024",
+    "tamanho": "",
+    "capa": "assets/img/trabalhos/podsincar-logo.webp",
+    "papel": "Identidade visual",
+    "descricao": [
+      "Identidade visual do PodSincar, com logotipo, variações, paleta e aplicações para redes sociais e banner impresso."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/podsincar-logo.webp",
+        "legenda": "Logotipo"
+      },
+      {
+        "src": "assets/img/trabalhos/podsincar-id.webp",
+        "legenda": "Manual de identidade"
+      }
+    ]
+  },
+  {
+    "id": "logofolio",
+    "titulo": "Logofolio",
+    "resumo": "Seleção de logotipos",
+    "categorias": [
+      "design"
+    ],
+    "selo": "Logotipos",
+    "ano": "2026",
+    "capa": "assets/img/trabalhos/logofolio-capa.webp",
+    "papel": "Design de marcas",
+    "descricao": [
+      "Uma seleção de logotipos e marcas criados ao longo dos anos."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/logofolio-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-05.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-06.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-07.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-08.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/logofolio-09.webp"
+      }
+    ],
+    "tamanho": ""
+  },
+  {
+    "id": "noia",
+    "titulo": "Noia",
+    "resumo": "Letreiro, telas e storyboard",
+    "categorias": [
+      "motion",
+      "design"
+    ],
+    "selo": "Motion",
+    "ano": "2025",
+    "tamanho": "",
+    "capa": "assets/img/trabalhos/noia-capa.webp",
+    "papel": "Motion design",
+    "descricao": [
+      "Letreiro, telas e storyboard para o projeto Noia."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/noia-capa.webp",
+        "legenda": "Letreiro"
+      },
+      {
+        "src": "assets/img/trabalhos/noia-tela2.webp"
+      },
+      {
+        "src": "assets/img/trabalhos/noia-tela7.webp",
+        "legenda": "Storyboard"
+      }
+    ]
+  },
+  {
+    "id": "ilustracoes",
+    "titulo": "Estudos sobre Ilustração",
+    "resumo": "Pintura digital, personagens e quadrinhos",
+    "categorias": [
+      "ilustracao"
+    ],
+    "selo": "Ilustração",
+    "ano": "2025",
+    "tamanho": "medio",
+    "capa": "assets/img/trabalhos/ilustra-menina.webp",
+    "papel": "Ilustração",
+    "descricao": [
+      "Uma seleção de ilustrações autorais: pintura digital, estudos de personagem e quadrinhos."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/estudos-ilustra-01.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/estudos-ilustra-02.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/estudos-ilustra-03.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/estudos-ilustra-04.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/ilustra-menina.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/estudos-ilustra-05.webp",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/ilustra-quadrinhos.webp",
+        "legenda": "Quadrinhos",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/ilustra-personagens.webp",
+        "legenda": "Model sheet de personagens",
+        "meia": true
+      }
+    ]
+  },
+  {
+    "id": "guia-de-som",
+    "titulo": "Guia de Bolso para Operadores",
+    "resumo": "Guia de técnica e operação para dublagem",
+    "categorias": [
+      "som",
+      "design"
+    ],
+    "selo": "Som",
+    "ano": "2023",
+    "tamanho": "medio",
+    "capa": "assets/img/trabalhos/guia-som-capa.webp",
+    "papel": "Pesquisa, texto e design",
+    "descricao": [
+      "Um resumo de estudos, orientações e dicas para a captação e operação de áudio. O guia não tenta impor regras: ele reúne relatos e a experiência adquirida durante o estágio na Scriptus Comunicação.",
+      "Leia mais na aba de artigos."
+    ],
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/guia-som-capa.webp",
+        "legenda": "Capa do guia"
+      }
+    ]
+  }
+]
