@@ -310,51 +310,61 @@ function idYoutube(v = "") {
 async function paginaAudiovisual() {
   const canal = $("#canal");
   if (canal) {
-    canal.innerHTML = SITE.youtube
-      ? `<div><h3>Canal no YouTube</h3><p>Vídeos, processos e bastidores do estúdio.</p></div><a class="btn" href="${esc(SITE.youtube)}" target="_blank" rel="noopener">Ver canal ↗</a>`
-      : `<div><h3>Canal no YouTube</h3><p>Em breve: vídeos, processos e bastidores do estúdio.</p></div>`;
+    const links = [];
+    if (SITE.youtube) links.push(`<a class="btn" href="${esc(SITE.youtube)}" target="_blank" rel="noopener">YouTube ↗</a>`);
+    if (SITE.spotify) links.push(`<a class="btn secundario" href="${esc(SITE.spotify)}" target="_blank" rel="noopener">Spotify ↗</a>`);
+    if (SITE.instagram) links.push(`<a class="btn secundario" href="https://instagram.com/${esc(SITE.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`);
+    canal.innerHTML = links.join("");
   }
 
-  const lista = $("#lista-videos");
-  if (lista) {
+  const blocos = document.querySelectorAll("[data-videos]");
+  if (blocos.length) {
     let videos = [];
     try { videos = await carregar("conteudo/videos.json"); } catch (e) {}
-    lista.innerHTML = videos.length ? videos.map((v) => {
+    const cartao = (v) => {
       const yt = v.youtube ? idYoutube(v.youtube) : "";
-      return `
-      <article class="video-card revelar">
-        <div class="tela">
-          ${yt
-            ? `<button class="capa-yt" data-yt="${esc(yt)}" aria-label="Assistir ${esc(v.titulo)}"><img src="https://i.ytimg.com/vi/${esc(yt)}/hqdefault.jpg" alt="" loading="lazy"></button>`
-            : v.embed
-              ? `<iframe src="${esc(v.embed)}" title="${esc(v.titulo)}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`
-              : `<video src="${esc(v.arquivo)}" autoplay muted loop playsinline preload="metadata"></video>`}
-        </div>
+      const vertical = v.formato === "vertical";
+      const capa = vertical ? `https://i.ytimg.com/vi/${esc(yt)}/oardefault.jpg` : `https://i.ytimg.com/vi/${esc(yt)}/hqdefault.jpg`;
+      const tela = yt
+        ? `<button class="capa-yt" data-yt="${esc(yt)}" aria-label="Assistir ${esc(v.titulo)}"><img src="${capa}" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(yt)}/hqdefault.jpg'"></button>`
+        : v.embed
+          ? `<iframe src="${esc(v.embed)}" title="${esc(v.titulo)}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`
+          : `<video src="${esc(v.arquivo)}" autoplay muted loop playsinline preload="metadata"></video>`;
+      return `<article class="video-card revelar">
+        <div class="tela">${tela}</div>
         <div class="txt"><h3>${esc(v.titulo)}</h3>${v.descricao ? `<p>${esc(v.descricao)}</p>` : ""}</div>
       </article>`;
-    }).join("") : `<p class="vazio">Nenhum vídeo ainda.</p>`;
-
-    // carrega o player do YouTube só quando clicar (site mais leve)
-    lista.addEventListener("click", (e) => {
-      const b = e.target.closest(".capa-yt");
-      if (!b) return;
-      b.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1" title="Vídeo do YouTube" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    };
+    blocos.forEach((bloco) => {
+      const itens = videos.filter((v) => (v.secao || "producoes") === bloco.dataset.videos);
+      const verticais = itens.filter((v) => v.formato === "vertical");
+      const horizontais = itens.filter((v) => v.formato !== "vertical");
+      bloco.innerHTML = !itens.length ? `<p class="vazio">Em breve.</p>` : `
+        ${verticais.length ? `<div class="videos vertical">${verticais.map(cartao).join("")}</div>` : ""}
+        ${horizontais.length ? `<div class="videos" ${verticais.length ? 'style="margin-top:48px"' : ""}>${horizontais.map(cartao).join("")}</div>` : ""}`;
+      // o player do YouTube só carrega quando a pessoa clica (site mais leve)
+      bloco.addEventListener("click", (e) => {
+        const b = e.target.closest(".capa-yt");
+        if (!b) return;
+        b.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1" title="Vídeo do YouTube" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+      });
+      revelar(bloco);
     });
-    revelar(lista);
   }
 
-  // sons: cada item do sons.json vai para a seção indicada em "secao"
-  // ("sound-design" ou "musica"). Pode ser um arquivo de áudio ou um link do YouTube.
+  // músicas em arquivo (sons.json) e o player do Spotify
   const listas = document.querySelectorAll("[data-secao]");
   if (listas.length) {
     let sons = [];
     try { sons = await carregar("conteudo/sons.json"); } catch (e) {}
     listas.forEach((lista) => {
-      const itens = sons.filter((s) => (s.secao || "sound-design") === lista.dataset.secao);
-      const audios = itens.filter((s) => s.arquivo);
-      const yts = itens.filter((s) => s.youtube);
-      lista.innerHTML = !itens.length ? `<p class="vazio">Em breve.</p>` : `
-        ${audios.length ? `<div class="faixas">${audios.map((s) => `
+      const audios = sons.filter((s) => (s.secao || "sound-design") === lista.dataset.secao && s.arquivo);
+      let html = "";
+      if (lista.dataset.secao === "musica" && SITE.spotify) {
+        const id = (SITE.spotify.match(/artist\/([A-Za-z0-9]+)/) || [])[1];
+        if (id) html += `<div class="spotify revelar"><iframe src="https://open.spotify.com/embed/artist/${id}?utm_source=generator&theme=0" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Ocarneiro Studio no Spotify"></iframe></div>`;
+      }
+      if (audios.length) html += `<div class="faixas" style="margin-top:32px">${audios.map((s) => `
           <div class="faixa-som revelar">
             <button class="tocar" aria-label="Tocar ${esc(s.titulo)}">${ICONE_PLAY}</button>
             <div class="meio">
@@ -363,24 +373,10 @@ async function paginaAudiovisual() {
             </div>
             <span class="tempo">0:00</span>
             <audio src="${esc(s.arquivo)}" preload="none"></audio>
-          </div>`).join("")}</div>` : ""}
-        ${yts.length ? `<div class="videos" style="margin-top:${audios.length ? "24px" : "0"}">${yts.map((s) => {
-          const yt = idYoutube(s.youtube);
-          return `<article class="video-card revelar">
-            <div class="tela"><button class="capa-yt" data-yt="${esc(yt)}" aria-label="Ouvir ${esc(s.titulo)}"><img src="https://i.ytimg.com/vi/${esc(yt)}/hqdefault.jpg" alt="" loading="lazy"></button></div>
-            <div class="txt"><h3>${esc(s.titulo)}</h3>${s.descricao ? `<p>${esc(s.descricao)}</p>` : ""}</div>
-          </article>`;
-        }).join("")}</div>` : ""}`;
-      if (lista.dataset.secao === "musica" && SITE.spotify) {
-        const id = (SITE.spotify.match(/artist\/([A-Za-z0-9]+)/) || [])[1];
-        if (id) lista.insertAdjacentHTML("beforeend", `<div class="spotify revelar"><iframe src="https://open.spotify.com/embed/artist/${id}?utm_source=generator&theme=0" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Ocarneiro Studio no Spotify"></iframe></div>`);
-      }
+          </div>`).join("")}</div>`;
+      lista.innerHTML = html;
+      if (html) lista.style.marginBottom = "48px";
       lista.querySelectorAll(".faixa-som").forEach(montarPlayer);
-      lista.addEventListener("click", (e) => {
-        const b = e.target.closest(".capa-yt");
-        if (!b) return;
-        b.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1" title="Vídeo do YouTube" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
-      });
       revelar(lista);
     });
   }
@@ -506,6 +502,8 @@ function paginaContato() {
   try { SITE = await carregar("conteudo/site.json"); } catch (e) { SITE = {}; }
   montarRodape();
   relogio();
+  const li = $("#link-linkedin");
+  if (li && SITE.linkedin) { li.href = SITE.linkedin; li.hidden = false; }
   const cta = $("#cta-email");
   if (cta && SITE.email) { cta.href = "mailto:" + SITE.email; cta.textContent = SITE.email + " ↗"; }
   revelar();

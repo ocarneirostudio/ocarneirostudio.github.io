@@ -821,6 +821,43 @@
     ]
   },
   {
+    "id": "web-tv-maker",
+    "titulo": "Web TV Maker",
+    "resumo": "Criação e avaliação de uma Web TV com conteúdo maker",
+    "categorias": [
+      "cinema"
+    ],
+    "selo": "Pesquisa",
+    "ano": "2018",
+    "capa": "assets/img/trabalhos/webtv-02.webp",
+    "papel": "Roteiro, gravação, edição e identidade visual do canal",
+    "cliente": "IFNMG Campus Januária · CNPq",
+    "descricao": [
+      "Projeto de iniciação científica com apoio do CNPq no IFNMG, Campus Januária. Criamos uma Web TV no YouTube unindo cultura maker e streaming: do estudo de sensores e aplicativos à montagem do estúdio, roteiro, gravação, edição, identidade visual do canal e avaliação com o público.",
+      "O trabalho virou artigo, apresentado no X Simpósio de Informática do IFNMG em 2018."
+    ],
+    "link": {
+      "texto": "Ler o artigo",
+      "href": "artigo.html?slug=web-tv-conteudo-maker"
+    },
+    "galeria": [
+      {
+        "src": "assets/img/trabalhos/webtv-02.webp",
+        "legenda": "Gravações de treinamento",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/webtv-03.webp",
+        "legenda": "Montagem do QG Maker",
+        "meia": true
+      },
+      {
+        "src": "assets/img/trabalhos/webtv-01.webp",
+        "legenda": "X Simpósio de Informática, IFNMG, 2018"
+      }
+    ]
+  },
+  {
     "id": "guia-de-som",
     "titulo": "Guia de Bolso para Operadores",
     "resumo": "Guia de técnica e operação para dublagem",

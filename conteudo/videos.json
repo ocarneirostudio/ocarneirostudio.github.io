@@ -1,52 +1,31 @@
 [
-  {
-    "titulo": "Palatrip Sessions 01 — Cego",
-    "descricao": "Edição, finalização e motion design",
-    "youtube": "6N3FVEOtd3o"
-  },
-  {
-    "titulo": "Dublagem Mineira — documentário",
-    "descricao": "Codireção e montagem",
-    "youtube": "LCDlH2Xr6YQ"
-  },
-  {
-    "titulo": "Clipe Jaé Hit",
-    "descricao": "Direção, captação e edição",
-    "youtube": "GYa8JXF2mxw"
-  },
-  {
-    "titulo": "Clipe Jaé Hit",
-    "descricao": "Direção, captação e edição",
-    "youtube": "0gzxVqQWmGQ"
-  },
-  {
-    "titulo": "Filmes mixados — playlist",
-    "descricao": "Dublagem e mixagem para a Scriptus Comunicação",
-    "embed": "https://www.youtube-nocookie.com/embed/videoseries?list=PLczrVKrXxVwsPHCVyI1Uaw6hdGcDkwuhm"
-  },
-  {
-    "titulo": "Apresentação Aureos",
-    "descricao": "Animação para divulgação da empresa",
-    "embed": "https://www-ccv.adobe.io/v1/player/ccv/MPvVGujqKWZ/embed?bgcolor=%23191919&api_key=BehancePro2View"
-  },
-  {
-    "titulo": "BP Seguradora",
-    "descricao": "Motion design",
-    "embed": "https://www-ccv.adobe.io/v1/player/ccv/ChnjB2m3ZMz/embed?bgcolor=%23191919&api_key=BehancePro2View"
-  },
-  {
-    "titulo": "BP Seguradora",
-    "descricao": "Motion design",
-    "embed": "https://www-ccv.adobe.io/v1/player/ccv/9yH8uxVjQXs/embed?bgcolor=%23191919&api_key=BehancePro2View"
-  },
-  {
-    "titulo": "Estudos sobre Animação — Mão",
-    "descricao": "Animação e design de som",
-    "embed": "https://www-ccv.adobe.io/v1/player/ccv/UcWLjLjB_XV/embed?bgcolor=%23191919&api_key=BehancePro2View"
-  },
-  {
-    "titulo": "A Outra Margem — teaser",
-    "descricao": "Teaser animado do festival",
-    "arquivo": "assets/video/aom-teaser.mp4"
-  }
+  { "secao": "producoes", "titulo": "Dublagem Mineira — documentário", "descricao": "Direção e edição", "youtube": "LCDlH2Xr6YQ" },
+  { "secao": "producoes", "titulo": "Palatrip Sessions 01 — Cego", "descricao": "Edição e motion design", "youtube": "6N3FVEOtd3o" },
+  { "secao": "producoes", "titulo": "DREW no Morro do Brejo do Amparo", "descricao": "Live · Brejo do Amparo, MG", "youtube": "gJD-fv4SWLY" },
+  { "secao": "producoes", "titulo": "Santa Mônica", "descricao": "Produção audiovisual", "youtube": "9K3QhOA0ggE" },
+  { "secao": "producoes", "titulo": "Feliz Tomando Gim — MC Theu da BC", "descricao": "Videoclipe · Jaé Hit", "youtube": "GYa8JXF2mxw" },
+  { "secao": "producoes", "titulo": "Videoclipe Jaé Hit", "descricao": "Direção, captação e edição", "youtube": "0gzxVqQWmGQ" },
+
+  { "secao": "motion", "titulo": "Apresentação Aureos", "descricao": "Animação institucional", "embed": "https://www-ccv.adobe.io/v1/player/ccv/MPvVGujqKWZ/embed?bgcolor=%23191919&api_key=BehancePro2View" },
+  { "secao": "motion", "titulo": "BP Seguradora", "descricao": "Motion design", "embed": "https://www-ccv.adobe.io/v1/player/ccv/ChnjB2m3ZMz/embed?bgcolor=%23191919&api_key=BehancePro2View" },
+  { "secao": "motion", "titulo": "BP Seguradora", "descricao": "Motion design", "embed": "https://www-ccv.adobe.io/v1/player/ccv/9yH8uxVjQXs/embed?bgcolor=%23191919&api_key=BehancePro2View" },
+  { "secao": "motion", "titulo": "Estudos sobre Animação — Mão", "descricao": "Animação e design de som", "embed": "https://www-ccv.adobe.io/v1/player/ccv/UcWLjLjB_XV/embed?bgcolor=%23191919&api_key=BehancePro2View" },
+  { "secao": "motion", "titulo": "Exercícios de Animação", "descricao": "Playlist · 8 vídeos", "embed": "https://www.youtube-nocookie.com/embed/videoseries?list=PLczrVKrXxVwsqbuBQR1A3kk9pV57c2EiK" },
+  { "secao": "motion", "titulo": "A Outra Margem — teaser", "descricao": "Teaser animado", "arquivo": "assets/video/aom-teaser.mp4" },
+
+  { "secao": "sound-design", "formato": "vertical", "titulo": "Samurai", "descricao": "Exercício de sound design", "youtube": "dByG-WN4HO4" },
+  { "secao": "sound-design", "formato": "vertical", "titulo": "Antora", "descricao": "Sound design", "youtube": "alU6gr0Xvxs" },
+  { "secao": "sound-design", "formato": "vertical", "titulo": "Dicas #1 — a mixagem começa na gravação", "descricao": "Dica de áudio", "youtube": "Z0fg1pBCwPY" },
+  { "secao": "sound-design", "titulo": "Filmes mixados", "descricao": "Playlist · 64 filmes dublados e mixados", "embed": "https://www.youtube-nocookie.com/embed/videoseries?list=PLczrVKrXxVwsPHCVyI1Uaw6hdGcDkwuhm" },
+
+  { "secao": "musica", "titulo": "Beat — sample Wilson das Neves", "descricao": "Beat", "youtube": "rGJUUUZdrSo" },
+  { "secao": "musica", "titulo": "Teu Nome no Sample", "descricao": "Beat", "youtube": "_0ZQR4BM2OE" },
+  { "secao": "musica", "titulo": "Contigo", "descricao": "Beat", "youtube": "DgKJ_NgSo2Y" },
+  { "secao": "musica", "titulo": "Sem Pressa", "descricao": "Beat", "youtube": "uyANCzEQyts" },
+  { "secao": "musica", "titulo": "808 Sorcery", "descricao": "Beat", "youtube": "yKg4Ee6p_-0" },
+  { "secao": "musica", "titulo": "Street", "descricao": "Type beat", "youtube": "LoZePT8m7to" },
+  { "secao": "musica", "titulo": "Vida Bandida", "descricao": "Type beat", "youtube": "oG_gm29NIXY" },
+  { "secao": "musica", "titulo": "Sonhos", "descricao": "Beat", "youtube": "6oBCsiBtBG0" },
+  { "secao": "musica", "titulo": "Entrelinhas", "descricao": "Beat", "youtube": "FF90R88gmtI" },
+  { "secao": "musica", "titulo": "Clube do Sono", "descricao": "Type beat", "youtube": "GfkJCNsgGV0" }
 ]

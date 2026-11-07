@@ -11,5 +11,18 @@
       "Dublagem",
       "Mixagem"
     ]
+  },
+  {
+    "slug": "web-tv-conteudo-maker",
+    "titulo": "Criação e avaliação de uma Web TV com conteúdo maker",
+    "data": "2018-11-28",
+    "resumo": "Artigo do X Simpósio de Informática do IFNMG (2018), projeto de iniciação científica com apoio do CNPq: como criamos um canal no YouTube unindo cultura maker e streaming, e o que o público achou.",
+    "capa": "assets/img/trabalhos/webtv-02.webp",
+    "tags": [
+      "Pesquisa",
+      "Vídeo",
+      "Educação",
+      "CNPq"
+    ]
   }
 ]

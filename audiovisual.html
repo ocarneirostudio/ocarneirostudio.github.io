@@ -18,40 +18,50 @@
 <body data-pagina="audiovisual">
   <div id="topo"></div>
   <main>
-
     <section class="pagina-topo">
       <div class="container">
-        <span class="eyebrow">Audiovisual</span>
+        <span class="rotulo">Audiovisual</span>
         <h1>Imagem em<br>movimento &amp; som.</h1>
-        <p class="lead">Vídeos, animações, trilhas e desenho de som. Aperte o play.</p>
+        <p class="lead">Produções, animação, sound design e beats. Tudo o que está no ar, num lugar só.</p>
+        <div class="canal-links" id="canal"></div>
+        <nav class="indice" aria-label="Seções desta página">
+          <a href="#producoes">(01) Produções</a><a href="#motion">(02) Motion &amp; Animação</a><a href="#sound-design">(03) Sound Design</a><a href="#musica">(04) Música</a>
+        </nav>
       </div>
     </section>
 
-    <section class="secao" style="padding-bottom:0">
+    <section class="secao" id="producoes">
       <div class="container">
-        <div class="canal revelar" id="canal"></div>
-        <div class="secao-topo revelar"><div><span class="eyebrow">Vídeos</span><h2 class="titulo-secao">Motion &amp; <em>cinema</em></h2></div></div>
-        <div class="videos" id="lista-videos"><p class="carregando">Carregando vídeos…</p></div>
+        <div class="secao-topo"><div><span class="rotulo">(01) Produções</span><h2 class="titulo-secao">Clipes, docs &amp; lives</h2></div></div>
+        <div data-videos="producoes" class="destaque-primeiro"><p class="carregando">Carregando…</p></div>
       </div>
     </section>
 
-    <section class="secao">
+    <section class="secao" id="motion" style="padding-top:0">
       <div class="container">
-        <div class="secao-topo revelar">
-          <div><span class="eyebrow">Sound design</span><h2 class="titulo-secao">Para <em>ouvir</em></h2></div>
-          <p class="lead" style="max-width:40ch">Desenho de som, foley e mixagem. Use fones para ouvir melhor.</p>
+        <div class="secao-topo"><div><span class="rotulo">(02) Motion &amp; Animação</span><h2 class="titulo-secao">Em movimento</h2></div></div>
+        <div data-videos="motion"><p class="carregando">Carregando…</p></div>
+      </div>
+    </section>
+
+    <section class="secao" id="sound-design" style="padding-top:0">
+      <div class="container">
+        <div class="secao-topo">
+          <div><span class="rotulo">(03) Sound Design</span><h2 class="titulo-secao">Para ouvir</h2></div>
+          <p class="lead" style="max-width:36ch">Desenho de som, foley e mixagem. Use fones para ouvir melhor.</p>
         </div>
-        <div id="lista-sons" data-secao="sound-design"><p class="carregando">Carregando sons…</p></div>
+        <div data-videos="sound-design"><p class="carregando">Carregando…</p></div>
       </div>
     </section>
 
     <section class="secao" id="musica" style="padding-top:0">
       <div class="container">
-        <div class="secao-topo revelar">
-          <div><span class="eyebrow">Música</span><h2 class="titulo-secao">Beats &amp; <em>produção</em></h2></div>
-          <p class="lead" style="max-width:40ch">Beats, produções e faixas autorais.</p>
+        <div class="secao-topo">
+          <div><span class="rotulo">(04) Música</span><h2 class="titulo-secao">Beats &amp; produção</h2></div>
+          <p class="lead" style="max-width:36ch">Beats e produções autorais, prod. OCARNEIRO.</p>
         </div>
-        <div id="lista-musica" data-secao="musica"><p class="carregando">Carregando músicas…</p></div>
+        <div id="lista-musica" data-secao="musica"></div>
+        <div data-videos="musica" class="compacto"><p class="carregando">Carregando…</p></div>
       </div>
     </section>
   </main>

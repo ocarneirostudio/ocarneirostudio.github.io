@@ -385,3 +385,19 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 500; letter-spacing: -.03em; line-h
 .lista-simples b { font-weight: 500; }
 .lista-simples span { color: var(--texto-3); font-size: .9rem; }
 @media (max-width: 760px) { .item-tempo { grid-template-columns: 1fr; gap: .4rem; } .formacao { grid-template-columns: 1fr; } }
+
+/* ---------- Audiovisual: atalhos, reels verticais e beats ---------- */
+.canal-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+.indice { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; margin-top: 2.4rem; padding-top: 1.2rem; border-top: 1px solid var(--linha); }
+.indice a { font-size: .95rem; color: var(--texto-3); transition: color .2s; }
+.indice a:hover { color: var(--texto); }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+.videos.vertical { grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); max-width: 1000px; }
+.videos.vertical .tela { aspect-ratio: 9 / 16; }
+.compacto .videos { grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 28px 12px; }
+.destaque-primeiro .videos > :first-child { grid-column: 1 / -1; }
+.destaque-primeiro .videos > :first-child h3 { font-size: clamp(1.3rem, 2.4vw, 2rem); letter-spacing: -.03em; }
+@media (max-width: 760px) { .videos.vertical { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.lista-simples a b { transition: color .2s; }
+.lista-simples a:hover b { color: var(--laranja); }
+.formacao .rotulo { display: block; }
