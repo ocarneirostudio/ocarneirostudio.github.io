@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O Carneiro Studio</title>
+  <meta name="description" content="Design, motion design, ilustração e sound design.">
+  <style>
+    :root { --bg: #0e0e0e; --fg: #f2f2f2; --muted: #8a8a8a; }
+    * { margin: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh; display: grid; place-items: center;
+      background: var(--bg); color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      padding: 24px; text-align: center;
+    }
+    h1 { font-size: clamp(2rem, 7vw, 4.5rem); letter-spacing: -0.03em; font-weight: 700; }
+    p { margin-top: 1rem; color: var(--muted); font-size: clamp(0.95rem, 2.5vw, 1.15rem); }
+    .tags { margin-top: 2rem; display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+    .tags span {
+      border: 1px solid #333; border-radius: 999px; padding: 0.4rem 0.9rem;
+      font-size: 0.85rem; animation: fade 0.8s ease both;
+    }
+    .tags span:nth-child(2) { animation-delay: 0.15s; }
+    .tags span:nth-child(3) { animation-delay: 0.3s; }
+    .tags span:nth-child(4) { animation-delay: 0.45s; }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>O Carneiro Studio</h1>
+    <p>Portfólio em construção. Em breve.</p>
+    <div class="tags">
+      <span>Design</span><span>Motion Design</span><span>Ilustração</span><span>Sound Design</span>
+    </div>
+  </main>
+</body>
+</html>
