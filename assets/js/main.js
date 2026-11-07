@@ -298,7 +298,7 @@ async function paginaTrabalho() {
     <section class="trabalho-topo container">
       <a class="voltar" href="index.html#trabalhos">← Todos os trabalhos</a>
       <h1>${esc(t.titulo)}</h1>
-      ${(t.descricao || []).map((p) => `<p class="lead">${esc(p)}</p>`).join("")}
+      ${(t.descricao || []).map((p) => (p.split(" · ").length > 2 && p.includes(":")) ? `<ul class="creditos">${p.split(" · ").map((c) => { const i = c.indexOf(":"); return i > 0 ? `<li><span>${esc(c.slice(0, i))}</span>${esc(c.slice(i + 1).trim())}</li>` : `<li>${esc(c)}</li>`; }).join("")}</ul>` : `<p class="lead">${esc(p)}</p>`).join("")}
       ${t.link ? `<p style="margin-top:1.4rem"><a class="btn" href="${esc(t.link.href)}">${esc(t.link.texto)} →</a></p>` : ""}
       <dl class="ficha">
         ${t.papel ? `<div><dt>Papel</dt><dd>${esc(t.papel)}</dd></div>` : ""}
@@ -603,6 +603,8 @@ function paginaContato() {
   try { SITE = await carregar("conteudo/site.json"); } catch (e) { SITE = {}; }
   montarRodape();
   relogio();
+  // no celular, listas longas começam fechadas
+  if (innerWidth <= 600) document.querySelectorAll("details.recolher").forEach((d) => (d.open = false));
   const li = $("#link-linkedin");
   if (li && SITE.linkedin) { li.href = SITE.linkedin; li.hidden = false; }
   const cta = $("#cta-email");

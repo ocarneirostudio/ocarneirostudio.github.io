@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 500; letter-spacing: -.03em; line-h
 .numeros b { display: block; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -.04em; }
 .numeros span { font-size: .85rem; color: var(--texto-3); }
 .ferramentas { font-size: .85rem; color: var(--texto-3); margin-top: 2rem; }
-@media (max-width: 860px) { .sobre { grid-template-columns: 1fr; } .sobre .retrato { aspect-ratio: 16 / 11; } }
+@media (max-width: 860px) { .sobre { grid-template-columns: 1fr; } .sobre .retrato { aspect-ratio: 1 / 1; } }
 @media (max-width: 520px) { .numeros { grid-template-columns: 1fr 1fr; } }
 
 /* ---------- Chamada final ---------- */
@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 500; letter-spacing: -.03em; line-h
 .chamada .acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
 
 /* ---------- Página de trabalho ---------- */
-.trabalho-topo { padding: 140px 0 32px; }
+.trabalho-topo { padding-top: 140px; padding-bottom: 32px; }
 .voltar { font-size: .9rem; color: var(--texto-3); transition: color .2s; }
 .voltar:hover { color: var(--texto); }
 .trabalho-topo h1 { font-size: clamp(2.8rem, 9vw, 8rem); letter-spacing: -.05em; line-height: .92; margin: 1.6rem 0 2rem; }
@@ -456,3 +456,154 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 .nota-som { font-size: .85rem; color: var(--texto-3); margin-top: 1rem; }
 .som-video video { width: 100%; border-radius: var(--raio); background: #000; }
 .galeria.pequena { max-width: 760px; }
+
+/* ==========================================================
+   AJUSTES DE CELULAR
+   Quebras de linha mais equilibradas e layout pensado para telas estreitas.
+   ========================================================== */
+h1, h2, h3, h4, .texto-sobre, .lead { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+
+@media (max-width: 600px) {
+  :root { --gutter: 20px; }
+  body { font-size: 15.5px; }
+
+  /* títulos */
+  .titulo-secao { font-size: 2.15rem; line-height: 1.02; }
+  .pagina-topo { padding: 112px 0 36px; }
+  .pagina-topo h1 { font-size: 2.75rem; line-height: .95; }
+  .pagina-topo .lead { font-size: 1.02rem; }
+  .secao { padding: 64px 0; }
+  .secao-topo { margin-bottom: 28px; }
+  .secao-topo .rotulo { margin-bottom: .6rem; }
+
+  /* capa */
+  .hero { padding: 96px 0 22px; }
+  .hero h1 { font-size: 2.15rem; line-height: 1; letter-spacing: -.04em; max-width: none; }
+  .hero h1 span { display: block; margin-top: .9rem; font-size: 1.15rem; line-height: 1.35; letter-spacing: -.01em; font-weight: 400; color: var(--texto-2); max-width: 30ch; }
+  .hero-pe { grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 36px; font-size: .8rem; }
+  .hero-pe > div:first-child { grid-column: 1 / -1; }
+  .hero-pe .direita { text-align: left; }
+
+  /* filtros numa linha que desliza */
+  .filtros { flex-wrap: nowrap; overflow-x: auto; margin: 0 calc(var(--gutter) * -1); padding: 4px var(--gutter) 10px; scrollbar-width: none; gap: 1.2rem; }
+  .filtros::-webkit-scrollbar { display: none; }
+  .filtros button { white-space: nowrap; flex: none; }
+
+  /* lista de trabalhos */
+  .projeto { padding: 18px 0 22px; }
+  .projeto .info { margin-top: 12px; gap: .25rem 1rem; }
+  .projeto h3 { font-size: 1.15rem; }
+  .projeto .meta { font-size: .82rem; }
+  .projeto .ver { font-size: .82rem; }
+
+  /* serviços */
+  .servico { grid-template-columns: 2rem 1fr; gap: .3rem 1rem; padding: 1.2rem 0; }
+  .servico h3 { font-size: 1.5rem; }
+  .servico p { font-size: .92rem; }
+
+  /* sobre */
+  .sobre { gap: 24px; }
+  .sobre .texto-sobre { font-size: 1.22rem; line-height: 1.3; }
+  .sobre p { font-size: .97rem; }
+  .numeros { grid-template-columns: 1fr; gap: 0; margin-top: 1.6rem; padding-top: 0; border-top: 0; }
+  .numeros > div { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--linha); }
+  .numeros b { font-size: 1.35rem; }
+  .numeros span { font-size: .8rem; text-align: right; }
+
+  /* experiência */
+  .item-tempo { padding: 1.2rem 0; }
+  .item-tempo h3 { font-size: 1.35rem; }
+  .item-tempo .onde { font-size: .92rem; }
+  .item-tempo p { font-size: .9rem; }
+  .formacao { gap: 36px; margin-top: 44px; }
+  .lista-simples li { padding: .75rem 0; }
+  .lista-simples b { font-size: .95rem; }
+  .lista-simples span { font-size: .8rem; }
+  details.recolher summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: baseline; }
+  details.recolher summary::-webkit-details-marker { display: none; }
+  details.recolher summary::after { content: "+"; font-size: 1.2rem; color: var(--laranja); }
+  details.recolher[open] summary::after { content: "–"; }
+
+  /* chamada final e rodapé */
+  .chamada { padding: 72px 0; }
+  .chamada h2 { font-size: 2.5rem; }
+  .chamada .email-grande { font-size: 1.05rem; word-break: normal; overflow-wrap: anywhere; }
+  .rodape { padding: 44px 0 24px; }
+  .rodape-colunas { gap: 1.6rem 1rem; }
+
+  /* página de trabalho */
+  .trabalho-topo { padding-top: 104px; padding-bottom: 20px; }
+  .trabalho-topo h1 { font-size: 2.6rem; margin: 1.1rem 0 1.3rem; }
+  .trabalho-topo .lead { font-size: 1rem; }
+  .ficha { grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.6rem; }
+  .ficha dd { font-size: .92rem; }
+  .galeria { gap: 8px; padding-bottom: 56px; }
+  .proximo { padding: 36px 0 48px; }
+  .proximo strong { font-size: 2.1rem; }
+
+  /* destaque de som (Casa Cheia) */
+  .destaque-som { padding: 28px var(--gutter); }
+  .som-cabeca { display: block; }
+  .som-cabeca .rotulo { display: block; margin-bottom: .6rem; }
+  .papeis { gap: .1rem 1rem; }
+  .papeis li { font-size: 1.35rem; }
+  .papeis li + li::before { display: none; }
+  .onda-estatica { height: 72px; gap: 2px; }
+
+  /* audiovisual */
+  .canal-links { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-top: 1.4rem; }
+  .canal-links .btn { justify-content: center; padding: .75rem .6rem; font-size: .88rem; }
+  .indice { flex-wrap: nowrap; overflow-x: auto; margin: 1.6rem calc(var(--gutter) * -1) 0; padding: 1rem var(--gutter) .4rem; scrollbar-width: none; }
+  .indice::-webkit-scrollbar { display: none; }
+  .indice a { white-space: nowrap; font-size: .88rem; }
+  .videos { gap: 24px; }
+  .video-card .txt { flex-direction: column; gap: .15rem; padding-top: .6rem; }
+  .video-card p { text-align: left; }
+  .video-card h3 { font-size: 1rem; }
+  .videos.vertical { gap: 12px; }
+  .compacto .videos { grid-template-columns: 1fr 1fr; gap: 20px 10px; }
+  .compacto .video-card h3 { font-size: .88rem; }
+  .compacto .video-card p { font-size: .75rem; }
+  .compacto .video-card .capa-yt::after { content: "▶"; padding: .3rem .5rem; left: 8px; bottom: 8px; }
+  .licenciar { flex-direction: column; gap: .1rem; font-size: .75rem; }
+  .loja-beats { padding: 20px; }
+  .loja-beats strong { font-size: 1.6rem; }
+  .faixa-som { gap: .9rem; }
+
+  /* fotografia */
+  .serie-topo { gap: 1rem; margin-bottom: 22px; }
+  .serie-texto p { font-size: .95rem; }
+  .carrossel-nav { padding-top: 10px; }
+
+  /* artigos */
+  .artigo-item { padding: 1.4rem 0; }
+  .artigo-item h2 { font-size: 1.35rem; }
+  .artigo-item p { font-size: .92rem; }
+  .artigo { padding-top: 104px; }
+  .artigo h1 { font-size: 2.05rem; line-height: 1.02; }
+  .texto { font-size: 1.02rem; line-height: 1.68; }
+  .texto h2 { font-size: 1.45rem; margin-top: 2.4rem; }
+  .texto h3 { font-size: 1.15rem; }
+  .texto .viz { margin: 2rem calc(var(--gutter) * -1); }
+  .viz-card { border-radius: 0; border-left: 0; border-right: 0; }
+
+  /* contato */
+  .contato-grade { padding: 36px 0 56px; gap: 40px; }
+  .contato-link { padding: 1rem 0; }
+  .contato-link strong { font-size: 1.1rem; }
+}
+details.recolher > summary { list-style: none; }
+details.recolher > summary::-webkit-details-marker { display: none; }
+@media (min-width: 601px) { details.recolher > summary { pointer-events: none; } }
+
+/* ---------- celular: ajustes finais ---------- */
+@media (max-width: 760px) {
+  .projeto .tira.uma { height: auto; aspect-ratio: 16 / 9; }
+  .rodape-gigante { font-size: 14.4vw; letter-spacing: -.045em; }
+  .projeto .tira, .projeto .tira.duas { scroll-padding-inline: var(--gutter); }
+}
+.creditos { list-style: none; padding: 0; margin: 1.6rem 0 0; max-width: 60ch; display: grid; gap: .55rem; font-size: .95rem; color: var(--texto-2); }
+.creditos li { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: 1rem; }
+.creditos span { color: var(--texto-3); }
+@media (max-width: 600px) { .creditos li { grid-template-columns: 1fr; gap: .1rem; } .creditos { gap: .8rem; } }
