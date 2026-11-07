@@ -50,6 +50,7 @@ function linksContato() {
     l.push({ rotulo: "WhatsApp", valor: bonito, href: "https://wa.me/" + n });
   }
   if (SITE.youtube) l.push({ rotulo: "YouTube", valor: "Canal no YouTube", href: SITE.youtube });
+  if (SITE.spotify) l.push({ rotulo: "Spotify", valor: "Ouvir no Spotify", href: SITE.spotify });
   if (SITE.behance) l.push({ rotulo: "Behance", valor: "Behance", href: SITE.behance });
   if (SITE.linkedin) l.push({ rotulo: "LinkedIn", valor: "André Ferreira Carneiro", href: SITE.linkedin });
   if (SITE.lattes) l.push({ rotulo: "Lattes", valor: "Currículo Lattes", href: SITE.lattes });
@@ -70,7 +71,7 @@ function montarTopo() {
       <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
       <nav class="menu" aria-label="Principal">
         ${MENU.map((m) => `<a href="${m.href}" class="${m.pagina === pagina ? "ativo" : ""}">${m.texto}</a>`).join("")}
-        <a class="btn" href="contato.html">Contato</a>
+        <a class="contato-topo ${pagina === "contato" ? "ativo" : ""}" href="contato.html">Contato</a>
       </nav>
     </div>
   </header>`;
@@ -91,24 +92,50 @@ function montarRodape() {
   const el = $("#rodape");
   if (!el) return;
   const ano = new Date().getFullYear();
+  const redes = linksContato().filter((l) => !["E-mail", "WhatsApp"].includes(l.rotulo));
+  const email = linksContato().find((l) => l.rotulo === "E-mail");
+  const whats = linksContato().find((l) => l.rotulo === "WhatsApp");
   el.outerHTML = `
   <footer class="rodape">
     <div class="container">
-      <a class="marca" href="index.html">
-        <img src="assets/img/logo-mark.svg" alt="" width="44" height="31">
-        <span class="nome"><b>OCARNEIRO</b><small>AUDIOVISUAL E CRIATIVIDADE</small></span>
-      </a>
-      <nav aria-label="Rodapé">
-        ${MENU.map((m) => `<a href="${m.href}">${m.texto}</a>`).join("")}
-        <a href="contato.html">Contato</a>
-        ${linksContato().filter((l) => l.rotulo !== "E-mail").map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${l.rotulo}</a>`).join("")}
-      </nav>
+      <div class="rodape-colunas">
+        <div>
+          <h4>Contato</h4>
+          ${email ? `<a href="${email.href}">${esc(email.valor)}</a>` : ""}
+          ${whats ? `<a href="${whats.href}" target="_blank" rel="noopener">${esc(whats.valor)}</a>` : ""}
+          <span>${esc(SITE.cidade || "")} · <span class="relogio" style="display:inline;padding:0">--:--</span></span>
+        </div>
+        <div>
+          <h4>Páginas</h4>
+          ${MENU.map((m) => `<a href="${m.href}">${m.texto}</a>`).join("")}
+          <a href="contato.html">Contato</a>
+        </div>
+        <div>
+          <h4>Redes</h4>
+          ${redes.slice(0, 4).map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${l.rotulo}</a>`).join("")}
+        </div>
+        <div>
+          <h4>Mais</h4>
+          ${redes.slice(4).map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${l.rotulo}</a>`).join("")}
+        </div>
+      </div>
+      <div class="rodape-gigante" aria-hidden="true">OCARNEIRO</div>
       <div class="copy">
-        <span>© ${ano} ${esc(SITE.nome || "OCARNEIRO STUDIO")}</span>
-        <span>${esc(SITE.cidade || "")}</span>
+        <span>© ${ano} Ocarneiro Studio</span>
+        <span>Audiovisual e criatividade</span>
       </div>
     </div>
   </footer>`;
+}
+
+/* ---------- relógio local (Minas Gerais) ---------- */
+function relogio() {
+  const atualizar = () => {
+    const h = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo" });
+    document.querySelectorAll(".relogio").forEach((r) => (r.textContent = h + " (BRT)"));
+  };
+  atualizar();
+  setInterval(atualizar, 15000);
 }
 
 /* ---------- capas do YouTube: se não houver versão HD, usa a padrão ---------- */
@@ -130,7 +157,7 @@ function revelar(raiz = document) {
 
 /* ---------- vídeo no hover dos cards ---------- */
 function ativarVideosHover(raiz) {
-  raiz.querySelectorAll(".card").forEach((card) => {
+  raiz.querySelectorAll(".projeto").forEach((card) => {
     const v = $("video", card);
     if (!v) return;
     card.addEventListener("mouseenter", () => {
@@ -151,24 +178,39 @@ async function paginaInicio() {
   try { trabalhos = await carregar("conteudo/trabalhos.json"); }
   catch (e) { grade.innerHTML = `<p class="vazio">Não foi possível carregar os trabalhos.</p>`; return; }
 
-  grade.innerHTML = trabalhos.map((t, i) => `
-    <a class="card ${esc(t.tamanho || "")} revelar" href="trabalho.html?id=${encodeURIComponent(t.id)}" data-categorias="${esc((t.categorias || []).join(" "))}" style="transition-delay:${(i % 3) * 80}ms">
-      <div class="midia">
-        <img src="${esc(t.capa)}" alt="${esc(t.titulo)}" loading="${i < 3 ? "eager" : "lazy"}">
-        ${t.video ? `<video data-src="${esc(t.video)}" muted loop playsinline preload="none"></video><span class="play-icone" aria-hidden="true"></span>` : ""}
-        ${t.selo ? `<span class="selo">${esc(t.selo)}</span>` : ""}
+  // cada trabalho vira uma linha com até 3 imagens (capa + galeria)
+  const imagensDe = (t) => {
+    const lista = [t.capa];
+    (t.galeria || []).forEach((g) => {
+      if (g.src) lista.push(g.src);
+      else if (g.youtube) lista.push(`https://i.ytimg.com/vi/${idYoutube(g.youtube)}/hqdefault.jpg`);
+    });
+    return [...new Set(lista)].filter(Boolean).slice(0, 3);
+  };
+  grade.innerHTML = trabalhos.map((t, i) => {
+    const imgs = imagensDe(t);
+    const classe = imgs.length === 1 ? "uma" : imgs.length === 2 ? "duas" : "";
+    const cats = (t.categorias || []).map((c) => CATEGORIAS[c] || c).join(", ");
+    return `
+    <a class="projeto revelar" href="trabalho.html?id=${encodeURIComponent(t.id)}" data-categorias="${esc((t.categorias || []).join(" "))}">
+      <div class="tira ${classe}">
+        ${imgs.map((src, k) => `<div class="quadro"><img src="${esc(src)}" alt="${k === 0 ? esc(t.titulo) : ""}" loading="${i < 2 ? "eager" : "lazy"}">
+          ${k === 0 && t.video ? `<video data-src="${esc(t.video)}" muted loop playsinline preload="none"></video>` : ""}</div>`).join("")}
       </div>
       <div class="info">
-        <div><h3>${esc(t.titulo)} <span class="seta">→</span></h3><p>${esc(t.resumo || "")}</p></div>
-        ${t.ano ? `<span class="ano">${esc(t.ano)}</span>` : ""}
+        <h3>${esc(t.titulo)}</h3>
+        <span class="meta">${esc(cats)}${t.ano ? ` · ${esc(t.ano)}` : ""}</span>
+        <span class="ver">Ver projeto →</span>
       </div>
-    </a>`).join("");
+    </a>`;
+  }).join("");
 
   // filtros: só mostra categorias que têm trabalhos
   const usadas = new Set(trabalhos.flatMap((t) => t.categorias || []));
   const filtros = $("#filtros");
-  filtros.innerHTML = `<button aria-pressed="true" data-cat="">Todos</button>` +
-    Object.entries(CATEGORIAS).filter(([k]) => usadas.has(k)).map(([k, v]) => `<button aria-pressed="false" data-cat="${k}">${v}</button>`).join("");
+  const conta = (k) => trabalhos.filter((t) => (t.categorias || []).includes(k)).length;
+  filtros.innerHTML = `<button aria-pressed="true" data-cat="">Todos<sup>${trabalhos.length}</sup></button>` +
+    Object.entries(CATEGORIAS).filter(([k]) => usadas.has(k)).map(([k, v]) => `<button aria-pressed="false" data-cat="${k}">${v}<sup>${conta(k)}</sup></button>`).join("");
   filtros.addEventListener("click", (e) => {
     const b = e.target.closest("button");
     if (!b) return;
@@ -177,7 +219,7 @@ async function paginaInicio() {
     grade.classList.toggle("filtrado", !!cat);
     const vt = grade.nextElementSibling;
     if (vt && vt.classList.contains("ver-todos")) vt.hidden = !!cat;
-    grade.querySelectorAll(".card").forEach((c) => {
+    grade.querySelectorAll(".projeto").forEach((c) => {
       const ok = !cat || c.dataset.categorias.split(" ").includes(cat);
       c.classList.toggle("escondido", !ok);
       if (ok) c.classList.add("visivel");
@@ -185,12 +227,12 @@ async function paginaInicio() {
   });
 
   // mostra só os primeiros na página inicial; o resto aparece no botão "Ver todos"
-  const LIMITE = 11;
-  const cards = [...grade.querySelectorAll(".card")];
+  const LIMITE = 8;
+  const cards = [...grade.querySelectorAll(".projeto")];
   if (cards.length > LIMITE) {
     cards.slice(LIMITE).forEach((c) => c.classList.add("extra"));
     grade.classList.add("recolhida");
-    grade.insertAdjacentHTML("afterend", `<div class="ver-todos"><button class="btn secundario">Ver todos os ${cards.length} trabalhos ↓</button></div>`);
+    grade.insertAdjacentHTML("afterend", `<div class="ver-todos"><button class="btn secundario">Ver todos os ${cards.length} trabalhos</button></div>`);
     const botaoTodos = grade.nextElementSibling.querySelector("button");
     botaoTodos.addEventListener("click", () => {
       grade.classList.remove("recolhida");
@@ -228,6 +270,7 @@ async function paginaTrabalho() {
       <a class="voltar" href="index.html#trabalhos">← Todos os trabalhos</a>
       <h1>${esc(t.titulo)}</h1>
       ${(t.descricao || []).map((p) => `<p class="lead">${esc(p)}</p>`).join("")}
+      ${t.link ? `<p style="margin-top:1.4rem"><a class="btn" href="${esc(t.link.href)}">${esc(t.link.texto)} →</a></p>` : ""}
       <dl class="ficha">
         ${t.papel ? `<div><dt>Papel</dt><dd>${esc(t.papel)}</dd></div>` : ""}
         ${cats ? `<div><dt>Área</dt><dd>${esc(cats)}</dd></div>` : ""}
@@ -300,23 +343,46 @@ async function paginaAudiovisual() {
     revelar(lista);
   }
 
-  const faixas = $("#lista-sons");
-  if (faixas) {
+  // sons: cada item do sons.json vai para a seção indicada em "secao"
+  // ("sound-design" ou "musica"). Pode ser um arquivo de áudio ou um link do YouTube.
+  const listas = document.querySelectorAll("[data-secao]");
+  if (listas.length) {
     let sons = [];
     try { sons = await carregar("conteudo/sons.json"); } catch (e) {}
-    faixas.innerHTML = sons.length ? sons.map((s, i) => `
-      <div class="faixa-som revelar" data-i="${i}">
-        <button class="tocar" aria-label="Tocar ${esc(s.titulo)}">${ICONE_PLAY}</button>
-        <div class="meio">
-          <h3>${esc(s.titulo)}</h3>
-          <div class="meta">${esc(s.descricao || "")}</div>
-          <div class="onda" role="slider" aria-label="Posição" tabindex="0">${(s.ondas || Array(60).fill(0.5)).map((h) => `<i style="height:${Math.max(8, h * 100)}%"></i>`).join("")}</div>
-        </div>
-        <span class="tempo">0:00</span>
-        <audio src="${esc(s.arquivo)}" preload="none"></audio>
-      </div>`).join("") : `<p class="vazio">Nenhum som ainda.</p>`;
-    faixas.querySelectorAll(".faixa-som").forEach(montarPlayer);
-    revelar(faixas);
+    listas.forEach((lista) => {
+      const itens = sons.filter((s) => (s.secao || "sound-design") === lista.dataset.secao);
+      const audios = itens.filter((s) => s.arquivo);
+      const yts = itens.filter((s) => s.youtube);
+      lista.innerHTML = !itens.length ? `<p class="vazio">Em breve.</p>` : `
+        ${audios.length ? `<div class="faixas">${audios.map((s) => `
+          <div class="faixa-som revelar">
+            <button class="tocar" aria-label="Tocar ${esc(s.titulo)}">${ICONE_PLAY}</button>
+            <div class="meio">
+              <div class="cabeca"><h3>${esc(s.titulo)}</h3><div class="meta">${esc(s.descricao || "")}</div></div>
+              <div class="onda" role="slider" aria-label="Posição" tabindex="0">${(s.ondas || Array(60).fill(0.5)).map((h) => `<i style="height:${Math.max(8, h * 100)}%"></i>`).join("")}</div>
+            </div>
+            <span class="tempo">0:00</span>
+            <audio src="${esc(s.arquivo)}" preload="none"></audio>
+          </div>`).join("")}</div>` : ""}
+        ${yts.length ? `<div class="videos" style="margin-top:${audios.length ? "24px" : "0"}">${yts.map((s) => {
+          const yt = idYoutube(s.youtube);
+          return `<article class="video-card revelar">
+            <div class="tela"><button class="capa-yt" data-yt="${esc(yt)}" aria-label="Ouvir ${esc(s.titulo)}"><img src="https://i.ytimg.com/vi/${esc(yt)}/hqdefault.jpg" alt="" loading="lazy"></button></div>
+            <div class="txt"><h3>${esc(s.titulo)}</h3>${s.descricao ? `<p>${esc(s.descricao)}</p>` : ""}</div>
+          </article>`;
+        }).join("")}</div>` : ""}`;
+      if (lista.dataset.secao === "musica" && SITE.spotify) {
+        const id = (SITE.spotify.match(/artist\/([A-Za-z0-9]+)/) || [])[1];
+        if (id) lista.insertAdjacentHTML("beforeend", `<div class="spotify revelar"><iframe src="https://open.spotify.com/embed/artist/${id}?utm_source=generator&theme=0" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Ocarneiro Studio no Spotify"></iframe></div>`);
+      }
+      lista.querySelectorAll(".faixa-som").forEach(montarPlayer);
+      lista.addEventListener("click", (e) => {
+        const b = e.target.closest(".capa-yt");
+        if (!b) return;
+        b.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1" title="Vídeo do YouTube" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      });
+      revelar(lista);
+    });
   }
 }
 
@@ -403,6 +469,8 @@ async function paginaArtigo() {
     </div>
     ${a.capa ? `<div class="capa"><img src="${esc(a.capa)}" alt=""></div>` : ""}
     <div class="texto">${html}</div>`;
+  if (window.montarViz) window.montarViz(alvo);
+  revelar(alvo);
 }
 
 /* ==========================================================
@@ -437,6 +505,9 @@ function paginaContato() {
   montarTopo();
   try { SITE = await carregar("conteudo/site.json"); } catch (e) { SITE = {}; }
   montarRodape();
+  relogio();
+  const cta = $("#cta-email");
+  if (cta && SITE.email) { cta.href = "mailto:" + SITE.email; cta.textContent = SITE.email + " ↗"; }
   revelar();
   paginaInicio();
   paginaTrabalho();

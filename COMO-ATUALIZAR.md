@@ -27,10 +27,16 @@ Preencha entre as aspas. O que ficar vazio (`""`) não aparece no site.
 { "titulo": "Nome do vídeo", "descricao": "Uma frase", "youtube": "https://www.youtube.com/watch?v=XXXXXXXXXXX" }
 ```
 
-## Som — `conteudo/sons.json`
-Suba o áudio (.mp3 de preferência) para `assets/audio/` e adicione:
+## Som e música — `conteudo/sons.json`
+Cada item vai para uma seção da página Audiovisual: `"secao": "sound-design"` ou `"secao": "musica"`.
+
+Com um arquivo de áudio (suba o .mp3 para `assets/audio/`):
 ```json
-{ "titulo": "Nome", "descricao": "Trilha / Foley / Mixagem", "arquivo": "assets/audio/nome.mp3" }
+{ "secao": "musica", "titulo": "Nome do beat", "descricao": "Beat", "arquivo": "assets/audio/nome.mp3" }
+```
+Com um vídeo do YouTube:
+```json
+{ "secao": "sound-design", "titulo": "Nome", "descricao": "Sound design", "youtube": "https://www.youtube.com/watch?v=XXXXXXXXXXX" }
 ```
 
 ## Novo artigo
@@ -40,6 +46,16 @@ Suba o áudio (.mp3 de preferência) para `assets/audio/` e adicione:
 { "slug": "nome-do-artigo", "titulo": "Título", "data": "2026-11-07", "resumo": "Uma frase", "capa": "", "tags": ["Som"] }
 ```
 O `slug` precisa ser igual ao nome do arquivo .md, sem o `.md`.
+
+### Ilustrações interativas nos artigos
+Escreva uma destas linhas, sozinha, no meio do texto do artigo:
+```html
+<div class="viz" data-viz="camadas"></div>
+<div class="viz" data-viz="posicao"></div>
+<div class="viz" data-viz="proximidade"></div>
+<div class="viz" data-viz="enquadramento"></div>
+<div class="viz" data-viz="frequencias"></div>
+```
 
 ## Limites do GitHub
 - Cada arquivo pode ter no máximo 100 MB, e o site inteiro, até 1 GB.

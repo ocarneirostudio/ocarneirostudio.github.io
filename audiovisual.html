@@ -12,7 +12,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Montserrat:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-pagina="audiovisual">
@@ -39,13 +39,24 @@
       <div class="container">
         <div class="secao-topo revelar">
           <div><span class="eyebrow">Sound design</span><h2 class="titulo-secao">Para <em>ouvir</em></h2></div>
-          <p class="lead" style="max-width:40ch">Trechos de trilhas e desenho de som. Use fones para ouvir melhor.</p>
+          <p class="lead" style="max-width:40ch">Desenho de som, foley e mixagem. Use fones para ouvir melhor.</p>
         </div>
-        <div class="faixas" id="lista-sons"><p class="carregando">Carregando sons…</p></div>
+        <div id="lista-sons" data-secao="sound-design"><p class="carregando">Carregando sons…</p></div>
+      </div>
+    </section>
+
+    <section class="secao" id="musica" style="padding-top:0">
+      <div class="container">
+        <div class="secao-topo revelar">
+          <div><span class="eyebrow">Música</span><h2 class="titulo-secao">Beats &amp; <em>produção</em></h2></div>
+          <p class="lead" style="max-width:40ch">Beats, produções e faixas autorais.</p>
+        </div>
+        <div id="lista-musica" data-secao="musica"><p class="carregando">Carregando músicas…</p></div>
       </div>
     </section>
   </main>
   <div id="rodape"></div>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/interacoes.js" defer></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 [
   {
-    "titulo": "Trip Sessions 01 — Cego",
+    "titulo": "Palatrip Sessions 01 — Cego",
     "descricao": "Edição, finalização e motion design",
     "youtube": "6N3FVEOtd3o"
   },
@@ -48,10 +48,5 @@
     "titulo": "A Outra Margem — teaser",
     "descricao": "Teaser animado do festival",
     "arquivo": "assets/video/aom-teaser.mp4"
-  },
-  {
-    "titulo": "Super Jhon — personagem 3D",
-    "descricao": "Teste de animação do personagem",
-    "arquivo": "assets/video/jhon-piscada.mp4"
   }
 ]
