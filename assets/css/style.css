@@ -611,3 +611,22 @@ details.recolher > summary::-webkit-details-marker { display: none; }
 .serie-filme { border-top: 1px solid var(--linha); }
 .serie-filme .serie-video { margin-top: 0; }
 .serie-filme .serie-video video { max-width: none; aspect-ratio: 16 / 9; }
+.carrossel .slide-video { height: 100%; width: auto; aspect-ratio: 16 / 9; flex: 0 0 auto; display: block; background: #000; scroll-snap-align: start; }
+@media (max-width: 760px) { .carrossel .slide-video { width: 100vw; aspect-ratio: auto; object-fit: contain; } }
+.ep { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 1.5rem 3rem; align-items: start; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--linha); }
+.ep h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: .6rem 0 .8rem; letter-spacing: -.03em; }
+.ep p { color: var(--texto-2); margin: 0; max-width: 42ch; }
+.ep-player { width: 100%; border: 0; border-radius: 12px; display: block; }
+@media (max-width: 760px) { .ep { grid-template-columns: 1fr; } }
+.texto .videos-canal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; margin: 1.6rem 0 0; }
+.texto .videos-canal figure { margin: 0; }
+.texto .videos-canal figure:first-child { grid-column: 1 / -1; }
+.texto .quadro-video { aspect-ratio: 16 / 9; border-radius: var(--raio); overflow: hidden; background: #000; }
+.texto .quadro-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.texto .videos-canal figcaption { font-size: .85rem; color: var(--texto-3); margin-top: .5rem; }
+@media (max-width: 600px) { .texto .videos-canal { grid-template-columns: 1fr; } }
+.texto .quadro-video { position: relative; }
+.texto .quadro-video .capa-yt { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #000; }
+.texto .quadro-video .capa-yt img { width: 100%; height: 100%; object-fit: cover; margin: 0; border-radius: 0; opacity: .9; transition: opacity .3s; }
+.texto .quadro-video .capa-yt:hover img { opacity: 1; }
+.texto .quadro-video .capa-yt::after { content: "▶ Assistir"; position: absolute; left: 12px; bottom: 12px; font-size: .8rem; font-weight: 500; padding: .45rem .7rem; border-radius: var(--raio); background: var(--texto); color: #000; }

@@ -163,13 +163,19 @@
     ],
     "selo": "Sound Design",
     "ano": "2026",
-    "capa": "assets/img/trabalhos/casacheia-capa.webp",
+    "capa": "assets/img/trabalhos/casacheia-celular.webp",
     "papel": "Sound design, mixagem e masterização",
     "descricao": [
       "Curta-metragem de ficção de Cadu, com 12 minutos. No filme, assinei o sound design, a mixagem e a masterização."
     ],
     "tira": [
-      "assets/img/trabalhos/casacheia-capa.webp"
+      {
+        "src": "assets/img/trabalhos/casacheia-celular.webp",
+        "fontes": {
+          "desktop": "assets/img/trabalhos/casacheia-desktop.webp",
+          "tablet": "assets/img/trabalhos/casacheia-tablet.webp"
+        }
+      }
     ],
     "galeria": [
       {

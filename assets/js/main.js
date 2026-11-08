@@ -53,6 +53,7 @@ function linksContato() {
   if (SITE.youtube) l.push({ rotulo: "YouTube", valor: "Canal no YouTube", href: SITE.youtube });
   if (SITE.spotify) l.push({ rotulo: "Spotify", valor: "Ouvir no Spotify", href: SITE.spotify });
   if (SITE.beatstars) l.push({ rotulo: "BeatStars", valor: "Loja de beats", href: SITE.beatstars });
+  if (SITE.soundcloud) l.push({ rotulo: "SoundCloud", valor: "Ouvir no SoundCloud", href: SITE.soundcloud });
   if (SITE.behance) l.push({ rotulo: "Behance", valor: "Behance", href: SITE.behance });
   if (SITE.linkedin) l.push({ rotulo: "LinkedIn", valor: "André Ferreira Carneiro", href: SITE.linkedin });
   if (SITE.lattes) l.push({ rotulo: "Lattes", valor: "Currículo Lattes", href: SITE.lattes });
@@ -161,7 +162,7 @@ function corrigirCapasYoutube(raiz = document) {
 function enquadrar(raiz = document) {
   const ajustar = (img) => {
     const q = img.closest(".quadro");
-    if (!q || !img.naturalWidth || img.style.objectPosition) return;
+    if (!q || !img.naturalWidth || img.style.objectPosition || q.classList.contains("sob-medida")) return;
     const ri = img.naturalWidth / img.naturalHeight, rq = q.clientWidth / q.clientHeight;
     q.classList.toggle("inteira", !/ytimg/.test(img.src) && Math.max(ri / rq, rq / ri) > (q.parentElement.classList.contains("uma") ? 1.25 : 2.3));
   };
@@ -222,7 +223,8 @@ async function paginaInicio() {
     return `
     <a class="projeto revelar" href="trabalho.html?id=${encodeURIComponent(t.id)}" data-categorias="${esc((t.categorias || []).join(" "))}">
       <div class="tira ${classe}">
-        ${imgs.map((item, k) => { const src = typeof item === "string" ? item : item.src; const foco = typeof item === "object" && item.foco ? ` style="object-position:${esc(item.foco)}"` : ""; return `<div class="quadro" style="--img:url('${esc(src)}')"><img src="${esc(src)}" alt="${k === 0 ? esc(t.titulo) : ""}" loading="${i < 2 ? "eager" : "lazy"}"${foco}>
+        ${imgs.map((item, k) => { const src = typeof item === "string" ? item : item.src; const foco = typeof item === "object" && item.foco ? ` style="object-position:${esc(item.foco)}"` : ""; const fontes = typeof item === "object" && item.fontes ? `${item.fontes.desktop ? `<source media="(min-width: 1025px)" srcset="${esc(item.fontes.desktop)}">` : ""}${item.fontes.tablet ? `<source media="(min-width: 761px)" srcset="${esc(item.fontes.tablet)}">` : ""}` : "";
+          return `<div class="quadro${fontes ? " sob-medida" : ""}" style="--img:url('${esc(src)}')">${fontes ? "<picture>" + fontes : ""}<img src="${esc(src)}" alt="${k === 0 ? esc(t.titulo) : ""}" loading="${i < 2 ? "eager" : "lazy"}"${foco}>${fontes ? "</picture>" : ""}
           ${k === 0 && t.video ? `<video data-src="${esc(t.video)}" muted loop playsinline preload="none"></video>` : ""}</div>`; }).join("")}
       </div>
       <div class="info">
@@ -365,6 +367,7 @@ async function paginaAudiovisual() {
     if (SITE.youtube) links.push(`<a class="btn" href="${esc(SITE.youtube)}" target="_blank" rel="noopener">YouTube ↗</a>`);
     if (SITE.spotify) links.push(`<a class="btn secundario" href="${esc(SITE.spotify)}" target="_blank" rel="noopener">Spotify ↗</a>`);
     if (SITE.beatstars) links.push(`<a class="btn secundario" href="${esc(SITE.beatstars)}" target="_blank" rel="noopener">Loja de beats ↗</a>`);
+    if (SITE.soundcloud) links.push(`<a class="btn secundario" href="${esc(SITE.soundcloud)}" target="_blank" rel="noopener">SoundCloud ↗</a>`);
     if (SITE.instagram) links.push(`<a class="btn secundario" href="https://instagram.com/${esc(SITE.instagram)}" target="_blank" rel="noopener">Instagram ↗</a>`);
     canal.innerHTML = links.join("");
   }
@@ -421,6 +424,12 @@ async function paginaAudiovisual() {
       if (lista.dataset.secao === "musica" && SITE.spotify) {
         const id = (SITE.spotify.match(/artist\/([A-Za-z0-9]+)/) || [])[1];
         if (id) html += `<div class="spotify revelar"><iframe src="https://open.spotify.com/embed/artist/${id}?utm_source=generator&theme=0" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Ocarneiro Studio no Spotify"></iframe></div>`;
+      }
+      if (lista.dataset.secao === "musica" && SITE.soundcloud_ep) {
+        html += `<div class="ep revelar">
+          <div class="ep-texto"><span class="rotulo">EP · SoundCloud</span><h3>Singular</h3><p>Um EP construtivista com singularidades brasileiras: hip-hop e deep house em quatro faixas. Fiz parte da mixagem.</p></div>
+          <iframe class="ep-player" src="https://w.soundcloud.com/player/?url=${encodeURIComponent(SITE.soundcloud_ep)}&color=%23ff9d2e&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false" height="300" loading="lazy" allow="autoplay" title="EP Singular no SoundCloud"></iframe>
+        </div>`;
       }
       if (audios.length) html += `<div class="faixas" style="margin-top:32px">${audios.map((s) => `
           <div class="faixa-som revelar">
@@ -501,23 +510,12 @@ async function paginaFotografia() {
       <div class="carrossel-moldura">
         <div class="carrossel" tabindex="0" aria-label="Fotos da série ${esc(se.titulo)} — role para o lado">
           ${se.slides.map((src, k) => `<img src="${esc(src)}" alt="${esc(se.titulo)}, imagem ${k + 1}" loading="${i === 0 && k < 3 ? "eager" : "lazy"}" draggable="false">`).join("")}
+          ${se.video ? `<video class="slide-video" src="${esc(se.video)}" controls playsinline preload="metadata" aria-label="Vídeo da série ${esc(se.titulo)}"></video>` : ""}
         </div>
         <div class="container carrossel-nav">
-          <span class="contador">${se.slides.length} imagens · arraste para o lado</span>
+          <span class="contador">${se.slides.length} imagens${se.video ? " + vídeo no final" : ""} · arraste para o lado</span>
           <span><button class="seta-car" data-dir="-1" aria-label="Anterior">←</button><button class="seta-car" data-dir="1" aria-label="Próxima">→</button></span>
         </div>
-      </div>
-    </section>`).join("") + series.filter((se) => se.video).map((se) => `
-    <section class="secao serie-filme" id="${esc(se.id)}-video">
-      <div class="container">
-        <div class="serie-topo">
-          <div>
-            <span class="rotulo">Vídeo · ${esc(se.ano || "")}</span>
-            <h2 class="titulo-secao">${esc(se.titulo)}</h2>
-          </div>
-          <div class="serie-texto"><p>O vídeo que fecha a série.</p></div>
-        </div>
-        <div class="serie-video revelar"><video src="${esc(se.video)}" controls playsinline preload="metadata"></video></div>
       </div>
     </section>`).join("");
 
@@ -579,6 +577,11 @@ async function paginaArtigo() {
     ${a.capa ? `<div class="capa"><img src="${esc(a.capa)}" alt=""></div>` : ""}
     <div class="texto">${html}</div>`;
   if (window.montarViz) window.montarViz(alvo);
+  alvo.addEventListener("click", (e) => {
+    const b = e.target.closest(".capa-yt");
+    if (!b) return;
+    b.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1" title="Vídeo do YouTube" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  });
   revelar(alvo);
 }
 

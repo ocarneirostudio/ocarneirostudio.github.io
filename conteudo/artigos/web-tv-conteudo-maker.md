@@ -58,3 +58,15 @@ Nas entrevistas, o público elogiou a qualidade da **edição**, do **roteiro** 
 O projeto despertou um olhar mais crítico e curioso sobre qualquer mídia, mudou a forma como eu enxergava essa área e trouxe responsabilidade, desenvoltura para me comunicar e muita diversão.
 
 Unindo cultura maker, streaming e Web TV, o projeto mostrou que estimular a criatividade e a produção independente deixa o ensino e a aprendizagem mais dinâmicos. O canal teve boa receptividade, despertou em alguns estudantes o interesse por robótica e deixou disponível um conteúdo que gera conhecimento para a comunidade.
+
+## Os vídeos do canal
+
+Os vídeos que produzimos estão no canal do grupo, o [E²C — IFNMG no YouTube](https://www.youtube.com/@e2c-ifnmg141). Participo de vários deles.
+
+<div class="videos-canal">
+<figure><div class="quadro-video"><button class="capa-yt" data-yt="d1TMLcBdDUI" aria-label="Assistir IFTV Maker — apresentação"><img src="https://i.ytimg.com/vi/d1TMLcBdDUI/hqdefault.jpg" alt="" loading="lazy"></button></div><figcaption>IFTV Maker — apresentação</figcaption></figure>
+<figure><div class="quadro-video"><button class="capa-yt" data-yt="lU9gXixf-ss" aria-label="Assistir Conheça o grupo E²C"><img src="https://i.ytimg.com/vi/lU9gXixf-ss/hqdefault.jpg" alt="" loading="lazy"></button></div><figcaption>Conheça o grupo E²C</figcaption></figure>
+<figure><div class="quadro-video"><button class="capa-yt" data-yt="0DyKmiMbSko" aria-label="Assistir Os 5 países mais robotizados do mundo"><img src="https://i.ytimg.com/vi/0DyKmiMbSko/hqdefault.jpg" alt="" loading="lazy"></button></div><figcaption>Os 5 países mais robotizados do mundo</figcaption></figure>
+<figure><div class="quadro-video"><button class="capa-yt" data-yt="kkTc0pHI2CA" aria-label="Assistir Inteligência artificial: a salvação ou destruição da humanidade?"><img src="https://i.ytimg.com/vi/kkTc0pHI2CA/hqdefault.jpg" alt="" loading="lazy"></button></div><figcaption>Inteligência artificial: a salvação ou destruição da humanidade?</figcaption></figure>
+<figure><div class="quadro-video"><button class="capa-yt" data-yt="YSRsNKMEEEc" aria-label="Assistir Top 5 robôs dos cinemas"><img src="https://i.ytimg.com/vi/YSRsNKMEEEc/hqdefault.jpg" alt="" loading="lazy"></button></div><figcaption>Top 5 robôs dos cinemas</figcaption></figure>
+</div>
