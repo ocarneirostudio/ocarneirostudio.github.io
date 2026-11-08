@@ -179,14 +179,14 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 500; letter-spacing: -.03em; line-h
 /* ---------- Sobre ---------- */
 .sobre { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
 .sobre .retrato { aspect-ratio: 4 / 5; overflow: hidden; background: var(--fundo-3); border-radius: var(--raio); }
-.sobre .retrato img { width: 100%; height: 100%; object-fit: cover; object-position: 20% center; filter: grayscale(1) contrast(1.05); }
+.sobre .retrato img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 .sobre .texto-sobre { font-size: clamp(1.3rem, 2.2vw, 2rem); letter-spacing: -.025em; line-height: 1.22; margin: 0 0 1.4rem; }
 .sobre p { color: var(--texto-2); font-size: 1.05rem; max-width: 52ch; }
 .numeros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid var(--linha); }
 .numeros b { display: block; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -.04em; }
 .numeros span { font-size: .85rem; color: var(--texto-3); }
 .ferramentas { font-size: .85rem; color: var(--texto-3); margin-top: 2rem; }
-@media (max-width: 860px) { .sobre { grid-template-columns: 1fr; } .sobre .retrato { aspect-ratio: 1 / 1; } }
+@media (max-width: 860px) { .sobre { grid-template-columns: 1fr; } .sobre .retrato { aspect-ratio: 4 / 5; } }
 @media (max-width: 520px) { .numeros { grid-template-columns: 1fr 1fr; } }
 
 /* ---------- Chamada final ---------- */
@@ -608,3 +608,6 @@ details.recolher > summary::-webkit-details-marker { display: none; }
 .creditos span { color: var(--texto-3); }
 @media (max-width: 600px) { .creditos li { grid-template-columns: 1fr; gap: .1rem; } .creditos { gap: .8rem; } }
 .projeto .tira.uma .quadro.inteira img { padding: 0; }
+.serie-filme { border-top: 1px solid var(--linha); }
+.serie-filme .serie-video { margin-top: 0; }
+.serie-filme .serie-video video { max-width: none; aspect-ratio: 16 / 9; }

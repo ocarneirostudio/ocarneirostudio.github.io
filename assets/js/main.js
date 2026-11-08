@@ -507,7 +507,18 @@ async function paginaFotografia() {
           <span><button class="seta-car" data-dir="-1" aria-label="Anterior">←</button><button class="seta-car" data-dir="1" aria-label="Próxima">→</button></span>
         </div>
       </div>
-      ${se.video ? `<div class="container serie-video revelar"><video src="${esc(se.video)}" controls playsinline preload="metadata"></video></div>` : ""}
+    </section>`).join("") + series.filter((se) => se.video).map((se) => `
+    <section class="secao serie-filme" id="${esc(se.id)}-video">
+      <div class="container">
+        <div class="serie-topo">
+          <div>
+            <span class="rotulo">Vídeo · ${esc(se.ano || "")}</span>
+            <h2 class="titulo-secao">${esc(se.titulo)}</h2>
+          </div>
+          <div class="serie-texto"><p>O vídeo que fecha a série.</p></div>
+        </div>
+        <div class="serie-video revelar"><video src="${esc(se.video)}" controls playsinline preload="metadata"></video></div>
+      </div>
     </section>`).join("");
 
   alvo.querySelectorAll(".carrossel-moldura").forEach((m) => {

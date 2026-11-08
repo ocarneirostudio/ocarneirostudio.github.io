@@ -278,19 +278,19 @@
   },
   {
     "id": "filmes-mixados",
-    "titulo": "Filmes Mixados",
-    "resumo": "Dublagem e mixagem de filmes para streaming",
+    "titulo": "Mixagem de dublagem",
+    "resumo": "64 filmes dublados e mixados para streaming",
     "categorias": [
       "som",
       "cinema"
     ],
-    "selo": "Mixagem",
+    "selo": "Mixagem de dublagem",
     "ano": "2023–2026",
     "capa": "https://i.ytimg.com/vi/MBorpBIU9rs/maxresdefault.jpg",
     "papel": "Edição, mixagem e masterização de áudio",
     "cliente": "Scriptus Comunicação",
     "descricao": [
-      "Uma coleção de filmes dublados com mixagem sonora feita por André Ferreira Carneiro para a Scriptus Comunicação. Cada produção foi trabalhada para oferecer uma experiência auditiva envolvente, aprimorando a narrativa através do som.",
+      "Mixagem e masterização de 64 filmes dublados em português, feitas na Scriptus Comunicação: equilíbrio entre vozes dubladas, trilha e efeitos, em estéreo e 5.1.",
       "Disponíveis para streaming no Lokie e no Prime Video."
     ],
     "galeria": [
@@ -420,7 +420,7 @@
   {
     "id": "mosca-do-ralo",
     "titulo": "Mosca do Ralo",
-    "resumo": "Curta de animação 3D",
+    "resumo": "Animação 3D para a música Mosca do Ralo",
     "categorias": [
       "motion"
     ],
@@ -429,7 +429,8 @@
     "capa": "assets/img/trabalhos/mosca-03.webp",
     "video": "assets/video/mosca-do-ralo.mp4",
     "descricao": [
-      "Curta de animação 3D com lip sync, finalizado em 2026."
+      "Animação 3D com lip sync para a música “Mosca do Ralo”, finalizada em 2026. Assinei a direção e a mixagem e participei do 3D e do rigging.",
+      "3D e rigging com a colaboração de G. Wilson, especialista em 3D."
     ],
     "tira": [
       "assets/img/trabalhos/mosca-03.webp",
@@ -458,7 +459,8 @@
         "src": "assets/img/trabalhos/mosca-05.webp",
         "meia": true
       }
-    ]
+    ],
+    "papel": "Direção, mixagem, 3D e rigging"
   },
   {
     "id": "pala-trip",
@@ -497,7 +499,7 @@
     "video": "assets/video/flor-de-caju.mp4",
     "cliente": "Pala Trip",
     "descricao": [
-      "Videoclipe “Flor de Caju”, produzido para a gravadora Pala Trip."
+      "Videoclipe “Flor de Caju”, produzido para a gravadora Pala Trip. Fiz toda a edição, a montagem do clipe e o color grading."
     ],
     "tira": [
       "assets/img/trabalhos/florcaju-02.webp",
@@ -526,7 +528,8 @@
         "src": "assets/img/trabalhos/florcaju-04.webp",
         "meia": true
       }
-    ]
+    ],
+    "papel": "Edição, montagem e color grading"
   },
   {
     "id": "no-toque-da-porsche",

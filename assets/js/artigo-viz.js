@@ -187,33 +187,65 @@
       dist.textContent = `${d} cm`;
       texto.innerHTML = B > 9 ? `<b>+${B.toFixed(0)} dB nos graves.</b> Bem perto, a voz fica encorpada, “de rádio”, mas pode embolar.`
         : B > 3 ? `<b>+${B.toFixed(0)} dB nos graves.</b> Distância de estúdio: presença com equilíbrio.`
-        : `<b>Resposta quase plana.</b> Longe, a voz perde corpo e o ambiente aparece mais.`;
-      if (filtro) filtro.gain.setTargetAtTime(B, filtro.context.currentTime, 0.05);
+        : `<b>Resposta quase plana.</b> Longe, a voz perde corpo e a sala aparece mais.`;
     };
     range.addEventListener("input", atualizar);
     atualizar();
 
-    // som de demonstração: um "zumbido de voz" sintético passando por um filtro de graves
+    // Som: a voz (gravação, se existir) passa por três etapas que mudam com a distância:
+    // 1) reforço de graves (efeito de proximidade), 2) nível do som direto, 3) quanto da sala (reverb) aparece.
     const botao = corpo.querySelector(".viz-ouvir");
-    let ctx = null, ganho = null;
-    botao.addEventListener("click", () => {
+    const VOZ = el.dataset.voz || "assets/audio/voz-guia.mp3";
+    let ctx = null, saida = null, direto = null, sala = null, agudos = null, fonte = null;
+    const sala_ir = (c, seg = 1.6) => {
+      const n = Math.floor(c.sampleRate * seg), ir = c.createBuffer(2, n, c.sampleRate);
+      for (let ch = 0; ch < 2; ch++) {
+        const d = ir.getChannelData(ch);
+        for (let k = 0; k < n; k++) d[k] = (Math.random() * 2 - 1) * Math.pow(1 - k / n, 3.2) * (k < c.sampleRate * 0.012 ? 0 : 1);
+      }
+      return ir;
+    };
+    const mixar = () => {
+      if (!ctx) return;
+      const d = +range.value, t = ctx.currentTime, perto = 1 - (d - 2) / 58;
+      filtro.gain.setTargetAtTime(reforco(d), t, 0.05);
+      direto.gain.setTargetAtTime(0.25 + 0.75 * Math.pow(perto, 1.4), t, 0.05);
+      sala.gain.setTargetAtTime(0.04 + 0.5 * Math.pow(1 - perto, 1.3), t, 0.08);
+      agudos.gain.setTargetAtTime(-7 * Math.pow(1 - perto, 1.5), t, 0.05);
+    };
+    range.addEventListener("input", mixar);
+    const sintetico = () => {
+      const osc = ctx.createOscillator(); osc.type = "sawtooth"; osc.frequency.value = 110;
+      const vib = ctx.createOscillator(); vib.frequency.value = 5; const vibG = ctx.createGain(); vibG.gain.value = 2;
+      vib.connect(vibG).connect(osc.frequency);
+      const f1 = ctx.createBiquadFilter(); f1.type = "bandpass"; f1.frequency.value = 700; f1.Q.value = 0.8;
+      const g = ctx.createGain(); g.gain.value = 0.25;
+      osc.connect(f1).connect(g); osc.start(); vib.start();
+      return g;
+    };
+    botao.addEventListener("click", async () => {
       if (!ctx) {
         const AC = window.AudioContext || window.webkitAudioContext;
         if (!AC) return;
         ctx = new AC();
-        const osc = ctx.createOscillator(); osc.type = "sawtooth"; osc.frequency.value = 110;
-        const vib = ctx.createOscillator(); vib.frequency.value = 5; const vibG = ctx.createGain(); vibG.gain.value = 2;
-        vib.connect(vibG).connect(osc.frequency);
-        const formante = ctx.createBiquadFilter(); formante.type = "bandpass"; formante.frequency.value = 700; formante.Q.value = 0.8;
-        const formante2 = ctx.createBiquadFilter(); formante2.type = "peaking"; formante2.frequency.value = 1200; formante2.gain.value = 6;
-        filtro = ctx.createBiquadFilter(); filtro.type = "lowshelf"; filtro.frequency.value = 220; filtro.gain.value = reforco(+range.value);
-        ganho = ctx.createGain(); ganho.gain.value = 0;
-        osc.connect(formante2).connect(filtro); osc.connect(formante).connect(filtro);
-        filtro.connect(ganho).connect(ctx.destination);
-        osc.start(); vib.start();
+        filtro = ctx.createBiquadFilter(); filtro.type = "lowshelf"; filtro.frequency.value = 200;
+        agudos = ctx.createBiquadFilter(); agudos.type = "highshelf"; agudos.frequency.value = 5000;
+        direto = ctx.createGain(); sala = ctx.createGain();
+        const verb = ctx.createConvolver(); verb.buffer = sala_ir(ctx);
+        saida = ctx.createGain(); saida.gain.value = 0;
+        filtro.connect(agudos);
+        agudos.connect(direto).connect(saida);
+        agudos.connect(verb).connect(sala).connect(saida);
+        saida.connect(ctx.destination);
+        try {
+          const buf = await ctx.decodeAudioData(await (await fetch(VOZ)).arrayBuffer());
+          fonte = ctx.createBufferSource(); fonte.buffer = buf; fonte.loop = true; fonte.start();
+          fonte.connect(filtro);
+        } catch (e) { sintetico().connect(filtro); }
+        mixar();
       }
-      const tocando = ganho.gain.value > 0.001 && botao.classList.contains("tocando");
-      ganho.gain.setTargetAtTime(tocando ? 0 : 0.07, ctx.currentTime, 0.05);
+      const tocando = botao.classList.contains("tocando");
+      saida.gain.setTargetAtTime(tocando ? 0 : 0.9, ctx.currentTime, 0.05);
       if (ctx.state === "suspended") ctx.resume();
       botao.classList.toggle("tocando", !tocando);
       botao.textContent = tocando ? "▶ Ouvir a diferença" : "■ Parar som";
