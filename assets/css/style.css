@@ -607,3 +607,4 @@ details.recolher > summary::-webkit-details-marker { display: none; }
 .creditos li { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: 1rem; }
 .creditos span { color: var(--texto-3); }
 @media (max-width: 600px) { .creditos li { grid-template-columns: 1fr; gap: .1rem; } .creditos { gap: .8rem; } }
+.projeto .tira.uma .quadro.inteira img { padding: 0; }

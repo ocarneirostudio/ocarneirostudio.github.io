@@ -163,7 +163,7 @@ function enquadrar(raiz = document) {
     const q = img.closest(".quadro");
     if (!q || !img.naturalWidth || img.style.objectPosition) return;
     const ri = img.naturalWidth / img.naturalHeight, rq = q.clientWidth / q.clientHeight;
-    q.classList.toggle("inteira", !/ytimg/.test(img.src) && Math.max(ri / rq, rq / ri) > 2.3);
+    q.classList.toggle("inteira", !/ytimg/.test(img.src) && Math.max(ri / rq, rq / ri) > (q.parentElement.classList.contains("uma") ? 1.25 : 2.3));
   };
   raiz.querySelectorAll(".quadro img").forEach((img) => {
     if (img.complete) ajustar(img); else img.addEventListener("load", () => ajustar(img), { once: true });
@@ -272,6 +272,7 @@ async function paginaInicio() {
   ativarVideosHover(grade);
   corrigirCapasYoutube(grade);
   enquadrar(grade);
+  let espera; addEventListener("resize", () => { clearTimeout(espera); espera = setTimeout(() => enquadrar(grade), 200); });
   revelar(grade);
 }
 
