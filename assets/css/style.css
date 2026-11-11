@@ -630,3 +630,9 @@ details.recolher > summary::-webkit-details-marker { display: none; }
 .texto .quadro-video .capa-yt img { width: 100%; height: 100%; object-fit: cover; margin: 0; border-radius: 0; opacity: .9; transition: opacity .3s; }
 .texto .quadro-video .capa-yt:hover img { opacity: 1; }
 .texto .quadro-video .capa-yt::after { content: "▶ Assistir"; position: absolute; left: 12px; bottom: 12px; font-size: .8rem; font-weight: 500; padding: .45rem .7rem; border-radius: var(--raio); background: var(--texto); color: #000; }
+
+/* ---------- Seções mais marcadas: fundo alternado, divisória e rótulo em destaque ---------- */
+.secao.tom { background: #181818; }
+main > .secao + .secao, main > .secao + .chamada { border-top: 1px solid var(--linha); }
+.secao-topo .rotulo { color: var(--laranja); letter-spacing: .06em; }
+.secao-topo .rotulo::before { content: ""; display: inline-block; width: 26px; height: 2px; background: currentColor; vertical-align: middle; margin: -2px .75rem 0 0; }

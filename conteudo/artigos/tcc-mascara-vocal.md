@@ -166,6 +166,8 @@ O processo de sincronização labial (*lip sync*) na animação, seja ela desenh
 
 <p class="legenda">Figura 5 – Guia de referência fonética da língua portuguesa e mapeamento de visemas</p>
 
+[![Figura 5](assets/img/artigos/tcc-07.webp)](assets/img/artigos/tcc-07.webp)
+
 <p class="fonte">Fonte: Elaborado pelo autor (2026).</p>
 
 Para cada fonema emitido pelo ator, o animador desenha uma pose de boca correspondente. O *lip sync* ganha força expressiva quando o visema da Figura 5 não reflete apenas a mecânica da palavra, mas a ressonância física e emocional descrita por Linklater (1976). Uma articulação travada e tensa na gravação pede mais do que lábios espremidos e maxilares rígidos: pede que toda a expressão facial (o estreitar dos olhos, a tensão das sobrancelhas, a contração das maçãs do rosto) trabalhe em conjunto para projetar autoridade ou contenção. Já uma fala arrastada e aberta leva o animador a relaxar não apenas os visemas, mas o rosto e o corpo inteiro.
@@ -271,6 +273,8 @@ Seu Leitão (Almir Martins) – O chefe do açougue, experiente e desconfiado: A
 
 <p class="legenda">Figura 8 – Decupagem do trecho de Seu Leitão (3min12s a 3min24s)</p>
 
+[![Figura 8](assets/img/artigos/tcc-08.webp)](assets/img/artigos/tcc-08.webp)
+
 <p class="fonte">Fonte: Elaborado pelo autor (2026), a partir de Contra-Filé (2019). Disponível em: https://www.youtube.com/watch?v=vduA_6iA7wQ&amp;t=205s. Acesso em: 24 jun. 2026.</p>
 
 A Figura 8 decupa o trecho em que Seu Leitão atende a primeira cliente do dia. Em 11,6 segundos, o boneco muda de pose em apenas 35 dos 278 quadros, uma média de 3 poses novas por segundo, e chega a permanecer 89 quadros (3,7 s) na mesma posição. Os movimentos que existem se concentram em três momentos: o giro em direção à cliente, que começa pelos olhos e sobrancelhas 12 quadros antes de "Pois não, minha senhora?" e se completa no início da fala; a inclinação sobre o balcão para pegar o papel da cliente, durante a pausa de 95 quadros (3,96 s); e o giro em direção a Valdecir, iniciado 7 quadros antes de um nervoso "Hoje é dia, hoje é dia", exatamente na micropausa que se segue à fala do funcionário ("Ôôô, hoje é dia… Zé Trip—"), interrompida no meio do chamado a Zé Tripa. O chefe, portanto, gira a cabeça no silêncio e só então repete a exclamação do subordinado. O dado mais revelador está na fala mais alta do trecho, "Meio quilo de pescoço?" (pico de −12,0 dBFS): durante seus 32 quadros, o corpo não muda de pose, e apenas as bocas são substituídas. A autoridade do chefe, portanto, não se traduz em gestos amplos, mas em economia: a voz carrega o comando, e o corpo permanece plantado, movendo-se apenas para anunciar a fala seguinte. Nesse ponto, o caso confirma a ressalva feita na Seção 2.3.1: em Seu Leitão, a cadência resulta em economia de movimento, e não em arcos amplos.
@@ -278,6 +282,8 @@ A Figura 8 decupa o trecho em que Seu Leitão atende a primeira cliente do dia. 
 Valdecir (Gustavo Ottoni) – O funcionário intermediário, inexperiente e reclamão: Em contraste com a estabilidade do chefe, a máscara vocal de Valdecir se apoia na instabilidade. No meio da hierarquia, ele recebe as ordens de Seu Leitão e as repassa a Zé Tripa, e a entonação oscilante de Ottoni traduz essa posição dupla: submissa e passiva diante do chefe, impaciente e irritada com o colega. A preguiça e as queixas do personagem aparecem na própria voz, em irregularidades rítmicas, falas arrastadas e mudanças bruscas conforme a tensão da cena. Na animação, porém, essa instabilidade se traduz menos em lentidão do que em irregularidade: a fala avança aos solavancos, entre pausas, e o corpo alterna surtos de movimento rápido, enquanto Valdecir tem a palavra, com poses longamente sustentadas, quando ele a perde, como mostra a decupagem da Figura 9.
 
 <p class="legenda">Figura 9 – Decupagem do trecho de Valdecir e Zé Tripa (7min53s a 8min05s)</p>
+
+[![Figura 9](assets/img/artigos/tcc-09.webp)](assets/img/artigos/tcc-09.webp)
 
 <p class="fonte">Fonte: Elaborado pelo autor (2026), a partir de Contra-Filé (2019). Disponível em: https://www.youtube.com/watch?v=vduA_6iA7wQ&amp;t=205s. Acesso em: 24 jun. 2026.</p>
 
@@ -290,6 +296,8 @@ Nesse trecho, portanto, o movimento acompanha quem tem a palavra: Valdecir se mo
 Zé Tripa (Antonio Perez Gonzales) – O profissional atrapalhado, estressado e teimoso: Gonzales constrói sua máscara vocal com coloquialismos e uma intensidade reativa. Sua voz é a mais irregular do grupo, marcada por atropelos, picos de estresse e uma dicção que privilegia o ímpeto emocional sobre a clareza. Funcionário reclamão, ele resiste na cadeia hierárquica: costuma contestar as ordens antes de obedecê-las a contragosto. Suas queixas, resmungos e teimosia geram sobreposições de fala que dão ao personagem uma humanidade crua. Na linha de tempo, essa performance combativa desafia o animador a traduzir não apenas o desajeito, mas a tensão física de Zé Tripa, com movimentos enérgicos e visemas extremos que acompanham sua emissão solta e impetuosa.
 
 <p class="legenda">Figura 10 – Decupagem do trecho de Zé Tripa (3min52s a 3min57s)</p>
+
+[![Figura 10](assets/img/artigos/tcc-10.webp)](assets/img/artigos/tcc-10.webp)
 
 <p class="fonte">Fonte: Elaborado pelo autor (2026), a partir de Contra-Filé (2019). Disponível em: https://www.youtube.com/watch?v=vduA_6iA7wQ&amp;t=205s. Acesso em: 24 jun. 2026.</p>
 
