@@ -73,7 +73,7 @@ function montarTopo() {
       </a>
       <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
       <nav class="menu" aria-label="Principal">
-        ${MENU.map((m) => `<a href="${m.href}" class="${m.pagina === pagina ? "ativo" : ""}">${m.texto}</a>`).join("")}
+        ${MENU.map((m) => `<a href="${m.href}" data-area="${m.pagina}" class="${m.pagina === pagina ? "ativo" : ""}">${m.texto}</a>`).join("")}
         <a class="contato-topo ${pagina === "contato" ? "ativo" : ""}" href="contato.html">Contato</a>
       </nav>
     </div>
@@ -428,7 +428,7 @@ async function paginaAudiovisual() {
       if (lista.dataset.secao === "musica" && SITE.soundcloud_ep) {
         html += `<div class="ep revelar">
           <div class="ep-texto"><span class="rotulo">EP · SoundCloud</span><h3>Singular</h3><p>Um EP construtivista com singularidades brasileiras: hip-hop e deep house em quatro faixas. Fiz parte da mixagem.</p></div>
-          <iframe class="ep-player" src="https://w.soundcloud.com/player/?url=${encodeURIComponent(SITE.soundcloud_ep)}&color=%23ff9d2e&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false" height="300" loading="lazy" allow="autoplay" title="EP Singular no SoundCloud"></iframe>
+          <iframe class="ep-player" src="https://w.soundcloud.com/player/?url=${encodeURIComponent(SITE.soundcloud_ep)}&color=${encodeURIComponent((getComputedStyle(document.body).getPropertyValue("--acento") || "#ff9d2e").trim())}&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false" height="300" loading="lazy" allow="autoplay" title="EP Singular no SoundCloud"></iframe>
         </div>`;
       }
       if (audios.length) html += `<div class="faixas" style="margin-top:32px">${audios.map((s) => `
